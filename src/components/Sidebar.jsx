@@ -1,6 +1,21 @@
-import { RiDashboardFill } from 'react-icons/ri';
-import { IconContext } from 'react-icons';
+import { NavLink } from 'react-router-dom';
+import Icon from './Icon';
+import { FaList } from 'react-icons/fa6';
+import { MdOutlineAddCircleOutline } from 'react-icons/md';
+
 const Sidebar = () => {
+	const navbar = [
+		{
+			icon: <FaList />,
+			text: 'لیست محصولات',
+			link: '/product/list',
+		},
+		{
+			icon: <MdOutlineAddCircleOutline />,
+			text: 'افزودن محصول',
+			link: '/product/add',
+		},
+	];
 	return (
 		<div>
 			<aside
@@ -10,21 +25,24 @@ const Sidebar = () => {
 			>
 				<div className="h-full px-3 py-4 overflow-y-auto bg-gray-50">
 					<ul className="space-y-2 font-medium">
-						<li>
-							<a
-								href="#"
-								className="flex items-center p-2 text-gray-900 rounded-lg hover:bg-gray-100 "
-							>
-								<IconContext.Provider
-									value={{ color: 'black', className: 'global-class-name' }}
+						{navbar.map((nav, index) => (
+							<li key={index}>
+								<NavLink
+									to={nav.link}
+									className="flex  items-center p-2 text-gray-700 rounded-lg hover:bg-gray-100 group "
 								>
-									<div>
-										<RiDashboardFill />
-									</div>
-								</IconContext.Provider>
-								<span className="ms-3">Dashboard</span>
-							</a>
-						</li>
+									<Icon
+										size={20}
+										color="text-gray-600 group-hover:text-gray-900"
+									>
+										{nav.icon}
+									</Icon>
+									<span className="ms-3 text-xl group-hover:text-gray-900">
+										{nav.text}
+									</span>
+								</NavLink>
+							</li>
+						))}
 					</ul>
 				</div>
 			</aside>
