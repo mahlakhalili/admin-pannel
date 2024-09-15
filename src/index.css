@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+	.form-input {
+		@apply grid gap-2;
+	}
+
+	.form-input label {
+		@apply font-normal block mb-2  text-xl text-gray-900;
+	}
+
+	.form-input input {
+		@apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 outline-none;
+	}
+}
+
 @layer base {
 	@font-face {
 		font-family: yekan;
