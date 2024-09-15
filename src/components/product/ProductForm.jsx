@@ -1,41 +1,44 @@
 import { useForm } from 'react-hook-form';
 
 const ProductForm = () => {
+	const { register, handleSubmit } = useForm();
+
 	return (
-		<div className='grid gap-4'>
-			<div className="grid gap-2">
-				<label className="font-normal block mb-2  text-xl text-gray-900 dark:text-white">
-					نام
-				</label>
+		<div className="grid gap-4">
+			<div className="form-input">
+				<label>نام</label>
 				<input
-					name="firstName"
 					type="text"
-					className="   bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
 					placeholder="John"
+					{...register('firstName')}
 				/>
 			</div>
-			<div className="grid gap-2">
-				<label className="block mb-2 font-normal text-xl  text-gray-900 dark:text-white">
-					نام خانوادگی
-				</label>
+			<div className="form-input">
+				<label>نام خانوادگی</label>
 				<input
-					name="lastName"
 					type="text"
-					className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
 					placeholder="John"
+					{...register('lastName')}
 				/>
 			</div>
-			<div className="grid gap-2">
-				<label className="block mb-2  font-normal text-xl text-gray-900 dark:text-white">
-					شغل
-				</label>
+			<div className="form-input">
+				<label>شغل</label>
 				<input
 					name="job"
 					type="text"
-					className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
 					placeholder="John"
+					{...register('job')}
 				/>
 			</div>
+			<button
+				type="button"
+				className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none "
+				onClick={handleSubmit((data) => {
+					console.log(data);
+				})}
+			>
+				Default
+			</button>
 		</div>
 	);
 };
