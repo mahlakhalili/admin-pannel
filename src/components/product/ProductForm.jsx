@@ -49,6 +49,7 @@ const ProductForm = () => {
 			</div>
 			<div className="form-input">
 				<label>نام خانوادگی</label>
+				<p>hii</p>
 				<input
 					type="text"
 					{...register('lastName', {
