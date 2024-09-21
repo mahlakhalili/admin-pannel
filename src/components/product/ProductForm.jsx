@@ -60,6 +60,7 @@ const ProductForm = () => {
 					<select {...register('gender')}>
 						<option value="female">زن</option>
 						<option value="male">مرد</option>
+						<option value=""></option>
 					</select>
 				</div>
 			</div>
