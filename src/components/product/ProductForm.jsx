@@ -49,7 +49,6 @@ const ProductForm = () => {
 			</div>
 			<div className="form-input">
 				<label>نام خانوادگی</label>
-				<p>hii</p>
 				<input
 					type="text"
 					{...register('lastName', {
@@ -57,12 +56,12 @@ const ProductForm = () => {
 					})}
 				/>
 				<div className="form-input">
-				<label>جنسیت</label>
-				<select {...register('gender')}>
-					<option value="female">زن</option>
-					<option value="male">مرد</option>
-				</select>
-			</div>
+					<label>جنسیت</label>
+					<select {...register('gender')}>
+						<option value="female">زن</option>
+						<option value="male">مرد</option>
+					</select>
+				</div>
 			</div>
 			<div className="form-input">
 				<label>سن</label>
@@ -95,7 +94,7 @@ const ProductForm = () => {
 					})}
 				/>
 			</div>
-			
+
 			<button
 				className="text-white text-lg  bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg  px-5 py-2.5 me-2 mb-2 focus:outline-none"
 				type="submit"
