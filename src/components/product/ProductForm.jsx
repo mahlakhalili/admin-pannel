@@ -12,6 +12,9 @@ const ProductForm = () => {
 			lastName: 'خلیلی',
 			age: '26',
 			job: 'دانشجو',
+			gender: 'female',
+			maritalStatus: 'singel',
+			isAbove18 : 'above18',
 		},
 	});
 
@@ -57,12 +60,57 @@ const ProductForm = () => {
 				/>
 				<div className="form-input">
 					<label>جنسیت</label>
-					<select {...register('gender')}>
+					<select
+						{...register('gender')}
+						className="form-input select"
+					>
 						<option value="female">زن</option>
 						<option value="male">مرد</option>
-						<option value=""></option>
 					</select>
 				</div>
+			</div>
+			<div className=" flex items-center mb-4">
+				<input
+					type="checkbox"
+					value="singel"
+					className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+					{...register('maritalStatus')}
+				/>
+				<label className="ms-2 text-sm font-medium text-gray-900 ">مجرد</label>
+			</div>
+
+			<div className="flex items-center mb-4">
+				<input
+					type="checkbox"
+					value="married"
+					className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+					{...register('maritalStatus')}
+				/>
+				<label className="ms-2 text-sm font-medium text-gray-900 ">متاهل</label>
+			</div>
+			<div className="flex items-center mb-4">
+				<input
+					id="default-radio-1"
+					type="radio"
+					value="above18"
+					{...register('isAbove18')}
+					className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+				/>
+				<label className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+					بالای 18 سال
+				</label>
+			</div>
+			<div className="flex items-center">
+				<input
+					id="default-radio-2"
+					type="radio"
+					value="under18"
+					{...register('isAbove18')}
+					className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+				/>
+				<label className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+					پایین 18 سال
+				</label>
 			</div>
 			<div className="form-input">
 				<label>سن</label>
