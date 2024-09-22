@@ -7,12 +7,12 @@ const Sidebar = () => {
 	const navbar = [
 		{
 			icon: <FaList />,
-			text: 'لیست محصولات',
+			text: 'لیست کاربران',
 			link: '/product/list',
 		},
 		{
 			icon: <MdOutlineAddCircleOutline />,
-			text: 'افزودن محصول',
+			text: 'افزودن کاربر',
 			link: '/product/add',
 		},
 	];
