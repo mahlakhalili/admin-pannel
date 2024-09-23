@@ -14,7 +14,7 @@ const ProductForm = () => {
 			job: 'دانشجو',
 			gender: 'female',
 			maritalStatus: 'singel',
-			isAbove18 : 'above18',
+			isAbove18: 'above18',
 		},
 	});
 
@@ -78,7 +78,6 @@ const ProductForm = () => {
 				/>
 				<label className="ms-2 text-sm font-medium text-gray-900 ">مجرد</label>
 			</div>
-
 			<div className="flex items-center mb-4">
 				<input
 					type="checkbox"
