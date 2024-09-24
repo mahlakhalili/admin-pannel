@@ -6,15 +6,22 @@ const ProductForm = () => {
 		register,
 		handleSubmit,
 		formState: { errors },
+		getValues,
+		setValue,
+		watch,
+		// reset,
+		setError,
+		// setFocus
 	} = useForm({
 		defaultValues: {
-			firstName: 'مهلا',
-			lastName: 'خلیلی',
-			age: '26',
-			job: 'دانشجو',
+			firstName: '',
+			lastName: '',
+			age: '',
+			job: '',
 			gender: 'female',
 			maritalStatus: 'singel',
 			isAbove18: 'above18',
+			showGender : true
 		},
 	});
 
@@ -59,35 +66,49 @@ const ProductForm = () => {
 					})}
 				/>
 				<div className="form-input">
-					<label>جنسیت</label>
+					<label>وضعیت تاهل</label>
 					<select
-						{...register('gender')}
+						{...register('maritalStatus')}
 						className="form-input select"
 					>
-						<option value="female">زن</option>
-						<option value="male">مرد</option>
+						<option value="singel">مجرد</option>
+						<option value="married">متاهل</option>
 					</select>
 				</div>
 			</div>
 			<div className=" flex items-center mb-4">
 				<input
 					type="checkbox"
-					value="singel"
+					value="showGender"
 					className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-					{...register('maritalStatus')}
+					{...register('showGender')}
 				/>
-				<label className="ms-2 text-sm font-medium text-gray-900 ">مجرد</label>
+				<label className="ms-2 text-sm font-medium text-gray-900 ">نمایش جنسیت</label>
 			</div>
-			<div className="flex items-center mb-4">
-				<input
-					type="checkbox"
-					value="married"
-					className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
-					{...register('maritalStatus')}
-				/>
-				<label className="ms-2 text-sm font-medium text-gray-900 ">متاهل</label>
-			</div>
-			<div className="flex items-center mb-4">
+			{watch('showGender') && (
+				<>
+					<div className=" flex items-center mb-4">
+						<input
+							type="radio"
+							value="female"
+							className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+							{...register('maritalStatus')}
+						/>
+						<label className="ms-2 text-sm font-medium text-gray-900 ">زن</label>
+					</div>
+					<div className="flex items-center mb-4">
+						<input
+							type="radio"
+							value="male"
+							className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
+							{...register('maritalStatus')}
+						/>
+						<label className="ms-2 text-sm font-medium text-gray-900 ">مرد</label>
+					</div>
+				</>
+			)}
+
+			{/* <div className="flex items-center mb-4">
 				<input
 					id="default-radio-1"
 					type="radio"
@@ -110,7 +131,7 @@ const ProductForm = () => {
 				<label className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
 					پایین 18 سال
 				</label>
-			</div>
+			</div> */}
 			<div className="form-input">
 				<label>سن</label>
 				<input
@@ -148,6 +169,23 @@ const ProductForm = () => {
 				type="submit"
 			>
 				ارسال
+			</button>
+			<button
+				type="button"
+				onClick={() => {
+					console.log(getValues('firstName'));
+					console.log(watch('lastName'));
+					setValue('firstName' , 'mahla khalili')
+					// reset()
+					// setFocus('firstName')
+					setError('lastName' , {
+						type : 'server',
+						message: 'error'
+					})
+					
+				}}
+			>
+				ذخیره
 			</button>
 		</Form>
 	);
