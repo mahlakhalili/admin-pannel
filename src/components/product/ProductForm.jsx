@@ -1,11 +1,12 @@
 import { useForm } from 'react-hook-form';
 import { Form } from 'react-router-dom';
+import Input from '../Input';
 
 const ProductForm = () => {
 	const {
 		register,
 		handleSubmit,
-		formState: { errors },
+		// formState: { errors },
 		getValues,
 		setValue,
 		watch,
@@ -21,7 +22,7 @@ const ProductForm = () => {
 			gender: 'female',
 			maritalStatus: 'singel',
 			isAbove18: 'above18',
-			showGender : true
+			showGender: true,
 		},
 	});
 
@@ -37,7 +38,23 @@ const ProductForm = () => {
 				}
 			)}
 		>
-			<div className="form-input">
+			<Input
+				label={'نام'}
+				type="text"
+			/>
+			<Input
+				label={'نام خانوادگی'}
+				type="text"
+			/>
+			<Input
+				label={'سن'}
+				type="number"
+			/>
+			<Input
+				label={'شغل'}
+				type="text"
+			/>
+			{/* <div className="form-input">
 				<label>نام</label>
 				<input
 					type="text"
@@ -56,8 +73,8 @@ const ProductForm = () => {
 				{errors?.firstName?.type === 'maxLength' && (
 					<span className="text-red-600 text-sm">نام باید کمتر از بیست حرف باشد</span>
 				)}
-			</div>
-			<div className="form-input">
+			</div> */}
+			{/* <div className="form-input">
 				<label>نام خانوادگی</label>
 				<input
 					type="text"
@@ -75,7 +92,7 @@ const ProductForm = () => {
 						<option value="married">متاهل</option>
 					</select>
 				</div>
-			</div>
+			</div> */}
 			<div className=" flex items-center mb-4">
 				<input
 					type="checkbox"
@@ -132,7 +149,7 @@ const ProductForm = () => {
 					پایین 18 سال
 				</label>
 			</div> */}
-			<div className="form-input">
+			{/* <div className="form-input">
 				<label>سن</label>
 				<input
 					name="age"
@@ -152,8 +169,8 @@ const ProductForm = () => {
 				{errors?.age?.type === 'max' && (
 					<span className="text-red-600 text-sm"> سن شما باید کمتر از 99 سال باشد</span>
 				)}
-			</div>
-			<div className="form-input">
+			</div> */}
+			{/* <div className="form-input">
 				<label>شغل</label>
 				<input
 					name="job"
@@ -162,7 +179,7 @@ const ProductForm = () => {
 						required: true,
 					})}
 				/>
-			</div>
+			</div> */}
 
 			<button
 				className="text-white text-lg  bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg  px-5 py-2.5 me-2 mb-2 focus:outline-none"
@@ -175,14 +192,13 @@ const ProductForm = () => {
 				onClick={() => {
 					console.log(getValues('firstName'));
 					console.log(watch('lastName'));
-					setValue('firstName' , 'mahla khalili')
+					setValue('firstName', 'mahla khalili');
 					// reset()
 					// setFocus('firstName')
-					setError('lastName' , {
-						type : 'server',
-						message: 'error'
-					})
-					
+					setError('lastName', {
+						type: 'server',
+						message: 'error',
+					});
 				}}
 			>
 				ذخیره
