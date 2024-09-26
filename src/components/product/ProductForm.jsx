@@ -52,6 +52,9 @@ const ProductForm = () => {
 					label={'نام خانوادگی'}
 					type="text"
 					name="lastName"
+					rules={{
+						required:''
+					}}
 				/>
 
 				{/* 
