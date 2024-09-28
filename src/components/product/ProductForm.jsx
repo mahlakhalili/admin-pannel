@@ -53,7 +53,7 @@ const ProductForm = () => {
 					type="text"
 					name="lastName"
 					rules={{
-						required:''
+						required:'نام خانوادگی خود را وارد کنید'
 					}}
 				/>
 
