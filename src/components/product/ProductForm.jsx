@@ -37,7 +37,7 @@ const ProductForm = () => {
 					type="text"
 					name="firstName"
 					rules={{
-						required: 'نام خود را وارد کنید',
+						required: ' bbنام خود را وارد کنید',
 						minLength: {
 							value: 2,
 							message: 'نام باید بیش از دو حرف باشد',
