@@ -6,19 +6,22 @@ const Input = ({
 	placeholder = '',
 	name = '',
 	defaultValue = '',
-	rules={},
+	mode = 'INPUT',
+	className = '',
+	rules = {},
 }) => {
 	const { control } = useFormContext();
 	const { field, fieldState } = useController({
 		control,
 		defaultValue,
 		name,
-		rules
+		rules,
 	});
+	const Tag = mode === 'INPUT' ? 'input' : 'textarea';
 	return (
-		<div className="form-input">
+		<div className={`form-input ${className}`}>
 			<label>{label}</label>
-			<input
+			<Tag
 				{...field}
 				type={type}
 				placeholder={placeholder}
@@ -38,5 +41,7 @@ Input.propTypes = {
 	name: PropTypes.string.isRequired,
 	defaultValue: PropTypes.string,
 	rules: PropTypes.object,
+	mode: PropTypes.oneOf(['INPUT', 'TEXTAREA']),
+	className: PropTypes.string,
 };
 export default Input;
