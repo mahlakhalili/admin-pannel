@@ -1,8 +1,9 @@
 import { FormProvider, useForm } from 'react-hook-form';
+import PropTypes from 'prop-types';
 import Input from '../Input';
 import Button from '../Button';
 
-const ProductForm = () => {
+const ProductForm = ({ onAdd = () => {} }) => {
 	const formMethods = useForm();
 	return (
 		<FormProvider {...formMethods}>
@@ -41,7 +42,7 @@ const ProductForm = () => {
 						type="submit"
 						text="ذخیره"
 						onClick={formMethods.handleSubmit((formData) => {
-							console.log(formData);
+							onAdd(formData);
 						})}
 					/>
 				</div>
@@ -49,6 +50,8 @@ const ProductForm = () => {
 		</FormProvider>
 	);
 };
+ProductForm.propTypes = {
+	onAdd: PropTypes.func,
+};
 
 export default ProductForm;
-
