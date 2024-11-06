@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer components {
+	.page {
+		@apply grid gap-6 max-w-screen-lg mx-auto;
+	}
 	.form {
 		@apply max-w-screen-lg w-full mx-auto;
 	}
@@ -37,6 +40,24 @@
 	}
 	.btn.red {
 		@apply text-white bg-red-700 hover:bg-red-900 focus:ring-red-300 rounded-lg;
+	}
+	.table-wrapper {
+		@apply relative overflow-x-auto shadow-md sm:rounded-lg;
+	}
+	.table-wrapper table {
+		@apply w-full text-sm text-left rtl:text-right text-gray-500 ;
+	}
+	.table-wrapper table thead {
+		@apply text-xs text-gray-700 uppercase bg-gray-50  ;
+	}
+	.table-wrapper table thead tr td {
+		@apply px-6 py-3;
+	}
+	.table-wrapper table tbody tr {
+		@apply odd:bg-white  even:bg-gray-50 even:dark:bg-gray-800 border-b;
+	}
+	.table-wrapper table tbody tr td {
+		@apply px-6 py-4;
 	}
 }
 
