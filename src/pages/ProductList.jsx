@@ -4,8 +4,8 @@ const ProductList = () => {
 			<h1 className="text-2xl">لیست محصولات</h1>
 
 			<div className="table-wrapper">
-				<table className="table-wrapper table">
-					<thead className="table-wrapper table thead">
+				<table>
+					<thead>
 						<tr>
 							<th>ردیف</th>
 							<th>عنوان محصول</th>
