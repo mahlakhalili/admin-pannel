@@ -1,7 +1,11 @@
+import { useNavigate } from 'react-router-dom';
 import ProductForm from '../components/product/ProductForm';
 import useAddProduct from '../hooks/apis/product/useAddProduct';
 const AddProduct = () => {
-	const addProduct = useAddProduct();
+	const navigate = useNavigate();
+	const addProduct = useAddProduct({
+		onAdd: () => navigate('/product/list'),
+	});
 
 	return (
 		<div className="grid gap-4 font-normal">
