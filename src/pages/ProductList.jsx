@@ -1,4 +1,6 @@
+import useGetProductList from '../hooks/apis/product/useGetProductList';
 const ProductList = () => {
+	const { data: products } = useGetProductList();
 	return (
 		<div className="page">
 			<h1 className="text-2xl">لیست محصولات</h1>
@@ -14,7 +16,17 @@ const ProductList = () => {
 							<th>تعداد</th>
 						</tr>
 					</thead>
-					<tbody></tbody>
+					<tbody>
+						{products?.map((product, index) => (
+							<tr key={product.id}>
+								<td>{index + 1}</td>
+								<td>{product.title}</td>
+								<td>{product.price}</td>
+								<td>{product.discount || 0}</td>
+								<td>{product.count}</td>
+							</tr>
+						))}
+					</tbody>
 				</table>
 			</div>
 		</div>
