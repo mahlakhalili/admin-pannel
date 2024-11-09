@@ -3,26 +3,18 @@
     {
       "id": "b480",
       "title": "laptop",
-      "description": "fgfghhfgch",
+      "description": "laptop asus",
       "price": "234434",
       "discount": "4343",
       "count": "434354"
     },
     {
-      "id": "5b48",
-      "title": "ujujuj",
-      "description": "jiujuu",
-      "price": "5",
-      "discount": "5",
-      "count": "5"
-    },
-    {
-      "id": "8c63",
-      "title": "laptop",
-      "description": "rtrtrt",
-      "price": "10000000",
-      "discount": "4545",
-      "count": "5"
+      "id": "0133",
+      "title": "گوشی سامسونگ",
+      "description": "گوشی سامسونگ s24",
+      "price": "560000000",
+      "discount": "",
+      "count": "4"
     }
   ]
 }
