@@ -57,7 +57,7 @@
 		@apply odd:bg-white  even:bg-gray-50 even:dark:bg-gray-800 border-b;
 	}
 	.table-wrapper table tbody tr td {
-		@apply px-6 py-4;
+		@apply px-6 py-4 text-gray-900;
 	}
 }
 
