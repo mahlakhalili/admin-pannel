@@ -33,25 +33,29 @@
 		@apply flex items-center justify-center shadow-sm outline-none focus:right-4 px-1 py-2;
 	}
 	.btn.blue {
-		@apply text-white bg-blue-700 hover:bg-blue-900 focus:ring-blue-300 rounded-lg;
+		@apply text-white bg-blue-700 hover:bg-blue-900 focus:ring-blue-300 px-3 py-1 rounded-lg;
 	}
 	.btn.green {
-		@apply text-white bg-green-700 hover:bg-green-900 focus:ring-green-300 rounded-lg;
+		@apply text-white bg-green-700 hover:bg-green-900 focus:ring-green-300 px-3 py-1 rounded-lg;
 	}
 	.btn.red {
-		@apply text-white bg-red-700 hover:bg-red-900 focus:ring-red-300 rounded-lg;
+		@apply text-white bg-red-700 hover:bg-red-900 focus:ring-red-300 px-3 py-1 rounded-lg;
 	}
 	.table-wrapper {
 		@apply relative overflow-x-auto shadow-md sm:rounded-lg;
 	}
 	.table-wrapper table {
-		@apply w-full text-sm text-left rtl:text-right text-gray-500 ;
+		@apply w-full text-sm text-left rtl:text-right text-gray-500;
 	}
 	.table-wrapper table thead {
-		@apply text-xs text-gray-700 uppercase bg-gray-50  ;
+		@apply text-xs text-gray-700 uppercase bg-gray-50;
 	}
 	.table-wrapper table thead tr th {
 		@apply px-6 py-3;
+	}
+	.table-wrapper table thead tr th.row,
+	.table-wrapper table thead tr th.action {
+		@apply w-1/12
 	}
 	.table-wrapper table tbody tr {
 		@apply odd:bg-white  even:bg-gray-50 even:dark:bg-gray-800 border-b;
