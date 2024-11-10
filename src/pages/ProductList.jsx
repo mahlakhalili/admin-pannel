@@ -32,6 +32,7 @@ const ProductList = () => {
 									<Button
 										text="حذف"
 										color="red"
+										loading={true}
 										onClick={() => {
 											deleteProduct.mutate(product.id);
 										}}
