@@ -32,7 +32,7 @@ const ProductList = () => {
 									<Button
 										text="حذف"
 										color="red"
-										loading={true}
+										loading={deleteProduct.isPending}
 										onClick={() => {
 											deleteProduct.mutate(product.id);
 										}}
