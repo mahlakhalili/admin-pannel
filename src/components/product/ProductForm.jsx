@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Input from '../Input';
 import Button from '../Button';
 
-const ProductForm = ({ onAdd = () => {} }) => {
+const ProductForm = ({ onAdd = () => {}, isAdding = false }) => {
 	const formMethods = useForm();
 	return (
 		<FormProvider {...formMethods}>
@@ -41,6 +41,7 @@ const ProductForm = ({ onAdd = () => {} }) => {
 					<Button
 						type="submit"
 						text="ذخیره"
+						loading={isAdding}
 						onClick={formMethods.handleSubmit((formData) => {
 							onAdd(formData);
 						})}
@@ -52,6 +53,7 @@ const ProductForm = ({ onAdd = () => {} }) => {
 };
 ProductForm.propTypes = {
 	onAdd: PropTypes.func,
+	isAdding: PropTypes.bool,
 };
 
 export default ProductForm;
