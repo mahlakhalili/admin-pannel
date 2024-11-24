@@ -3,13 +3,9 @@ const ListSkeleton = () => {
 		<div className="page">
 			<div className="flex items-center justify-between">
 				<div className="skeleton w-40 h-5"></div>
+                <div className="skeleton w-40 h-4"></div>
 
-				{/* <Link
-					className="btn blue"
-					to="/product/add"
-				>
-					افزودن محصول
-				</Link> */}
+				
 			</div>
 
 			{/* <div className="table-wrapper">
