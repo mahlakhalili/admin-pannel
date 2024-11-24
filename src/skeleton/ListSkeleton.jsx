@@ -3,7 +3,7 @@ const ListSkeleton = () => {
 		<div className="page">
 			<div className="flex items-center justify-between">
 				<div className="skeleton w-40 h-5"></div>
-                <div className="skeleton w-40 h-4"></div>
+                <div className="skeleton w-36 h-4"></div>
 
 				
 			</div>
