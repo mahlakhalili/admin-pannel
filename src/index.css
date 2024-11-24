@@ -72,6 +72,10 @@
 	.table-wrapper table tbody tr td {
 		@apply px-6 py-4 text-gray-900;
 	}
+
+	.skeleton {
+		@apply relative overflow-hidden bg-gray-200 rounded after:absolute after:top-0 after:right-0 after:h-full after:w-full after:bg-gradient-to-r after:from-gray-200 after:via-white after:to-gray-200 after:animate-progress;
+	}
 }
 
 @layer base {
