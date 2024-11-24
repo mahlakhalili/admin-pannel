@@ -10,7 +10,12 @@ const ProductList = () => {
 		<div className="page">
 			<div className="flex items-center justify-between">
 				<h1 className="text-2xl">لیست محصولات</h1>
-				<Link className="btn blue">افزودن محصول</Link>
+				<Link
+					className="btn blue"
+					to="/product/add"
+				>
+					افزودن محصول
+				</Link>
 			</div>
 
 			<div className="table-wrapper">
