@@ -1,10 +1,11 @@
 import useGetProductList from '../hooks/apis/product/useGetProductList';
 import useDeleteProduct from '../hooks/apis/product/useDeleteProduct';
+import ListSkeleton from '../skeleton/ListSkeleton';
 import PropTypes from 'prop-types';
 import Button from '../components/Button';
 import { Link } from 'react-router-dom';
 const ProductList = () => {
-	const { data: products } = useGetProductList();
+	const { data: products , isLoading } = useGetProductList();
 
 	return (
 		<div className="page">
