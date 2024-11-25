@@ -4,11 +4,13 @@ export default {
 	theme: {
 		extend: {
 			keyframes: {
-				'0%': {
-					transform: 'translate3d(100% , 0, 0)',
-				},
-				'100%': {
-					transform: 'translate3d(-100% , 0, 0)',
+				progress: {
+					'0%': {
+						transform: 'translate3d(100% , 0, 0)',
+					},
+					'100%': {
+						transform: 'translate3d(-100% , 0, 0)',
+					},
 				},
 			},
 			animation: {
