@@ -5,7 +5,8 @@ import PropTypes from 'prop-types';
 import Button from '../components/Button';
 import { Link } from 'react-router-dom';
 const ProductList = () => {
-	const { data: products , isLoading } = useGetProductList();
+	const { data: products, isLoading } = useGetProductList();
+	if (isLoading) return <ListSkeleton />;
 
 	return (
 		<div className="page">
