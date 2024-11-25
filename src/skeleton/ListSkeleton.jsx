@@ -2,40 +2,161 @@ const ListSkeleton = () => {
 	return (
 		<div className="page">
 			<div className="flex items-center justify-between">
-				<div className="skeleton w-40 h-5"></div>
-                <div className="skeleton w-36 h-4"></div>
-
-				
+				<div className="skeleton w-40 h-8"></div>
+				<div className="skeleton w-36 h-7"></div>
 			</div>
 
-			{/* <div className="table-wrapper">
-				<table>
-					<thead>
-						<tr>
-							<th>ردیف</th>
-							<th>عنوان محصول</th>
-							<th>قیمت</th>
-							<th>تخفیف</th>
-							<th>تعداد</th>
-							<th className="row">عملیات</th>
-						</tr>
-					</thead>
-					<tbody>
-						{products?.map((product, index) => (
-							<TableRow
-								key={product.id}
-								row={index + 1}
-								// {...product}
-								id={product.id}
-								title={product.title}
-								price={product.price}
-								discount={product.discount}
-								count={product.count}
-							/>
-						))}
-					</tbody>
-				</table>
-			</div> */}
+			{
+				<div className="table-wrapper">
+					<table>
+						<thead>
+							<tr>
+								<th>
+									<div className="skeleton h-2"></div>
+								</th>
+								<th>
+									{' '}
+									<div className="skeleton h-2"></div>
+								</th>
+								<th>
+									<div className="skeleton h-2"></div>
+								</th>
+								<th>
+									<div className="skeleton h-2"></div>
+								</th>
+								<th>
+									<div className="skeleton h-2"></div>
+								</th>
+								<th className="row">
+									<div className="skeleton h-2"></div>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<div className="skeleton h-2"></div>
+								</td>
+								<td>
+									<div className="skeleton h-2"></div>
+								</td>
+								<td>
+									<div className="skeleton h-2"></div>
+								</td>
+								<td>
+									<div className="skeleton h-2"></div>
+								</td>
+								<td>
+									<div className="skeleton h-2"></div>
+								</td>
+                                <td>
+									<div className="skeleton h-2"></div>
+								</td>
+							</tr>
+                            <tr>
+								<td>
+									<div className="skeleton h-2"></div>
+								</td>
+								<td>
+									<div className="skeleton h-2"></div>
+								</td>
+								<td>
+									<div className="skeleton h-2"></div>
+								</td>
+								<td>
+									<div className="skeleton h-2"></div>
+								</td>
+								<td>
+									<div className="skeleton h-2"></div>
+								</td>
+                                <td>
+									<div className="skeleton h-2"></div>
+								</td>
+							</tr>
+                            <tr>
+								<td>
+									<div className="skeleton h-2"></div>
+								</td>
+								<td>
+									<div className="skeleton h-2"></div>
+								</td>
+								<td>
+									<div className="skeleton h-2"></div>
+								</td>
+								<td>
+									<div className="skeleton h-2"></div>
+								</td>
+								<td>
+									<div className="skeleton h-2"></div>
+								</td>
+                                <td>
+									<div className="skeleton h-2"></div>
+								</td>
+							</tr>
+                            <tr>
+								<td>
+									<div className="skeleton h-2"></div>
+								</td>
+								<td>
+									<div className="skeleton h-2"></div>
+								</td>
+								<td>
+									<div className="skeleton h-2"></div>
+								</td>
+								<td>
+									<div className="skeleton h-2"></div>
+								</td>
+								<td>
+									<div className="skeleton h-2"></div>
+								</td>
+                                <td>
+									<div className="skeleton h-2"></div>
+								</td>
+							</tr>
+                            <tr>
+								<td>
+									<div className="skeleton h-2"></div>
+								</td>
+								<td>
+									<div className="skeleton h-2"></div>
+								</td>
+								<td>
+									<div className="skeleton h-2"></div>
+								</td>
+								<td>
+									<div className="skeleton h-2"></div>
+								</td>
+								<td>
+									<div className="skeleton h-2"></div>
+								</td>
+                                <td>
+									<div className="skeleton h-2"></div>
+								</td>
+							</tr>
+                            <tr>
+								<td>
+									<div className="skeleton h-2"></div>
+								</td>
+								<td>
+									<div className="skeleton h-2"></div>
+								</td>
+								<td>
+									<div className="skeleton h-2"></div>
+								</td>
+								<td>
+									<div className="skeleton h-2"></div>
+								</td>
+								<td>
+									<div className="skeleton h-2"></div>
+								</td>
+                                <td>
+									<div className="skeleton h-2"></div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			}
 		</div>
 	);
 };
