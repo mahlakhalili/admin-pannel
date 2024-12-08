@@ -62,19 +62,26 @@ const TableRow = ({ row, id, title, price, discount, count }) => {
 			<td>{discount || 0}</td>
 			<td>{count}</td>
 			<td>
-				<Button
-					text="حذف"
-					color="red"
-					loading={deleteProduct.isPending}
-					onClick={() => {
-						deleteProduct.mutate(id);
-					}}
-				/>
+				<div className="btns flex items-center gap-4">
+					<Button
+						text="ویرایش"
+						color="green"
+						to={`/product/edit/${id}`}
+					/>
+					<Button
+						text="حذف"
+						color="red"
+						loading={deleteProduct.isPending}
+						onClick={() => {
+							deleteProduct.mutate(id);
+						}}
+					/>
+				</div>
 			</td>
 		</tr>
 	);
 };
-ProductList.propTypes = {
+TableRow.propTypes = {
 	row: PropTypes.number,
 	id: PropTypes.string,
 	title: PropTypes.string,
