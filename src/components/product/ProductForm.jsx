@@ -3,8 +3,16 @@ import PropTypes from 'prop-types';
 import Input from '../Input';
 import Button from '../Button';
 
-const ProductForm = ({ onAdd = () => {}, isAdding = false }) => {
-	const formMethods = useForm();
+const ProductForm = ({ mode = 'ADD', data = {}, onAdd = () => {}, isAdding = false }) => {
+	const formMethods = useForm({
+		defaultValues: {
+			title: data.title ?? '',
+			description: data.description ?? '',
+			price: data.price ?? '',
+			discount: data.discount ?? '',
+			count: data.count ?? '',
+		},
+	});
 	return (
 		<FormProvider {...formMethods}>
 			<form className="form grid grid-cols-3 gap-4">
@@ -38,20 +46,30 @@ const ProductForm = ({ onAdd = () => {}, isAdding = false }) => {
 					type="number"
 				/>
 				<div className="btn blue flex justify-center items-center col-span-3 mt-4 text-lg">
-					<Button
-						type="submit"
-						text="ذخیره"
-						loading={isAdding}
-						onClick={formMethods.handleSubmit((formData) => {
-							onAdd(formData);
-						})}
-					/>
+					{mode === 'ADD' && (
+						<Button
+							type="submit"
+							text="ذخیره"
+							loading={isAdding}
+							onClick={formMethods.handleSubmit((formData) => {
+								onAdd(formData);
+							})}
+						/>
+					)}
+					{mode === 'EDIT' && (
+						<Button
+							text="ویرایش"
+							color="green"
+						/>
+					)}
 				</div>
 			</form>
 		</FormProvider>
 	);
 };
 ProductForm.propTypes = {
+	mode: PropTypes.oneOf(['ADD', 'EDIT']),
+	data: PropTypes.object,
 	onAdd: PropTypes.func,
 	isAdding: PropTypes.bool,
 };
