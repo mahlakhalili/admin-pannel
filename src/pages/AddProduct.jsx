@@ -11,6 +11,7 @@ const AddProduct = () => {
 		<div className="grid gap-4 font-normal">
 			<h1 className="text-2xl">افزودن محصول</h1>
 			<ProductForm
+				mode="ADD"
 				isAdding={addProduct.isPending}
 				onAdd={(formData) => {
 					addProduct.mutate(formData);
