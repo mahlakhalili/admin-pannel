@@ -1,16 +1,19 @@
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { BiLoaderAlt } from 'react-icons/bi';
+import { Link } from 'react-router-dom';
 const Button = ({
 	text,
 	onClick,
+	to,
 	color = '',
 	type = 'button',
 	loading = false,
 	disabled = false,
 }) => {
+	const Tag = to ? Link : 'button'
 	return (
-		<button
+		<Tag
 			type={type}
 			onClick={onClick}
 			disabled={loading || disabled}
@@ -19,13 +22,15 @@ const Button = ({
 				[color]: color,
 				disabled: loading || disabled,
 			})}
+			to={to}
 		>
 			{loading ? <BiLoaderAlt className="animate-spin" /> : text}
-		</button>
+		</Tag>
 	);
 };
 Button.propTypes = {
 	text: PropTypes.string,
+	to:PropTypes.string,
 	onClick: PropTypes.func,
 	loading: PropTypes.bool,
 	disabled: PropTypes.bool,
