@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 const FormSkeleton = () => {
 	return (
 		<div className="page">
@@ -17,13 +18,17 @@ const FormSkeleton = () => {
 	);
 };
 
-const InputSkeleton = () => {
+const InputSkeleton = ({ className = '' }) => {
 	return (
 		<div className="grid gap-2">
-			<div className="skeleton h-3 w-10"></div>
-			<div className="skeleton h-6"></div>
+			<div className="skeleton h-3 w-20"></div>
+			<div className="skeleton h-10"></div>
 		</div>
 	);
+};
+
+InputSkeleton.propTypes = {
+	className: PropTypes.string,
 };
 
 export default FormSkeleton;
