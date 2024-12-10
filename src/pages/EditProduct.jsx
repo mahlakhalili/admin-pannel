@@ -13,12 +13,7 @@ const EditProduct = () => {
 	const editProduct = useEditProduct({
 		onEdit: () => navigate('/product/list'),
 	});
-	if (isLoading)
-		return (
-			<div>
-				<FormSkeleton />
-			</div>
-		);
+	if (isLoading) return <FormSkeleton />;
 	return (
 		<div className="grid gap-4 font-normal">
 			<h1 className="text-2xl">ویرایش محصول</h1>
