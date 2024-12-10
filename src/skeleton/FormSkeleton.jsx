@@ -7,6 +7,11 @@ const FormSkeleton = () => {
 				<InputSkeleton />
 				<InputSkeleton />
 				<InputSkeleton />
+				<InputSkeleton />
+				<InputSkeleton />
+				<InputSkeleton />
+				<InputSkeleton />
+				<InputSkeleton />
 			</div>
 		</div>
 	);
