@@ -1,4 +1,5 @@
 import ProductForm from '../components/product/ProductForm';
+import FormSkeleton from '../skeleton/FormSkeleton';
 import { useNavigate } from 'react-router-dom';
 import useGetProduct from '../hooks/apis/product/useGetProduct';
 import useEditProduct from '../hooks/apis/product/useEditProduct';
@@ -12,7 +13,12 @@ const EditProduct = () => {
 	const editProduct = useEditProduct({
 		onEdit: () => navigate('/product/list'),
 	});
-	if (isLoading) return <div> کمی صبر کنید ...</div>;
+	if (isLoading)
+		return (
+			<div>
+				<FormSkeleton />
+			</div>
+		);
 	return (
 		<div className="grid gap-4 font-normal">
 			<h1 className="text-2xl">ویرایش محصول</h1>
