@@ -45,9 +45,10 @@ const ProductForm = ({ mode = 'ADD', data = {}, onAdd = () => {}, isAdding = fal
 					label="تعداد"
 					type="number"
 				/>
-				<div className="btn blue flex justify-center items-center col-span-3 mt-4 text-lg">
+				<div className="btn  flex justify-center items-center col-span-3 mt-4 text-lg">
 					{mode === 'ADD' && (
 						<Button
+							color="blue"
 							type="submit"
 							text="ذخیره"
 							loading={isAdding}
