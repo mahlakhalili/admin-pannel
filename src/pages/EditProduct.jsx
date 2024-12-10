@@ -1,6 +1,5 @@
 import ProductForm from '../components/product/ProductForm';
 import { useNavigate } from 'react-router-dom';
-
 import useGetProduct from '../hooks/apis/product/useGetProduct';
 import useEditProduct from '../hooks/apis/product/useEditProduct';
 import { useParams } from 'react-router-dom';
@@ -20,8 +19,8 @@ const EditProduct = () => {
 			<ProductForm
 				mode="EDIT"
 				data={product}
-				isAdding={editProduct.isPending}
-				onAdd={(formData) => {
+				isEditing={editProduct.isPending}
+				onEdit={(formData) => {
 					editProduct.mutate(formData);
 				}}
 			/>
