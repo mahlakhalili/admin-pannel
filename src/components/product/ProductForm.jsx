@@ -3,7 +3,14 @@ import PropTypes from 'prop-types';
 import Input from '../Input';
 import Button from '../Button';
 
-const ProductForm = ({ mode = 'ADD', data = {}, onAdd = () => {}, isAdding = false }) => {
+const ProductForm = ({
+	mode = 'ADD',
+	data = {},
+	onAdd = () => {},
+	isAdding = false,
+	onEdit = () => {},
+	isEditing = false,
+}) => {
 	const formMethods = useForm({
 		defaultValues: {
 			title: data.title ?? '',
@@ -61,6 +68,10 @@ const ProductForm = ({ mode = 'ADD', data = {}, onAdd = () => {}, isAdding = fal
 						<Button
 							text="ویرایش"
 							color="green"
+							loading={isEditing}
+							onClick={formMethods.handleSubmit((formData) => {
+								onEdit(formData);
+							})}
 						/>
 					)}
 				</div>
@@ -73,6 +84,8 @@ ProductForm.propTypes = {
 	data: PropTypes.object,
 	onAdd: PropTypes.func,
 	isAdding: PropTypes.bool,
+	onEdit: PropTypes.func,
+	isEditing: PropTypes.bool,
 };
 
 export default ProductForm;
