@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-const useEditProduct = () => {
+const useEditProduct = ({ onEdit = () => {} }) => {
 	const queryClient = useQueryClient();
 	return useMutation({
 		mutationFn: (data) =>
@@ -11,6 +11,7 @@ const useEditProduct = () => {
 			queryClient.invalidateQueries({
 				queryKey: ['products'],
 			});
+			onEdit();
 			toast.success('محصول با موفقیت ویرایش شد');
 		},
 	});
