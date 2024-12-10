@@ -70,7 +70,7 @@ const ProductForm = ({
 							color="green"
 							loading={isEditing}
 							onClick={formMethods.handleSubmit((formData) => {
-								onEdit(formData);
+								onEdit({ ...formData, id: data.id });
 							})}
 						/>
 					)}
