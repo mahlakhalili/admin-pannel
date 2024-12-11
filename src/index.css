@@ -50,6 +50,9 @@
 	.btn.red.disabled {
 		@apply bg-red-400 hover:bg-red-400;
 	}
+	.btn.outline-red {
+		@apply text-red-700 border border-red-700 bg-white hover:border-red-900 focus:ring-red-300 px-3 py-1 rounded-lg;;
+	}
 	.table-wrapper {
 		@apply relative overflow-x-auto shadow-md sm:rounded-lg;
 	}
