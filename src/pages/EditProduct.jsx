@@ -3,15 +3,18 @@ import FormSkeleton from '../skeleton/FormSkeleton';
 import { useNavigate } from 'react-router-dom';
 import useGetProduct from '../hooks/apis/product/useGetProduct';
 import useEditProduct from '../hooks/apis/product/useEditProduct';
+import useDeleteProduct from '../hooks/apis/product/useDeleteProduct';
 import { useParams } from 'react-router-dom';
 
 const EditProduct = () => {
-	const { productId } = useParams();
-	const { data: product, isLoading } = useGetProduct(productId);
+	const productId = useParams();
 	const navigate = useNavigate();
-
+	const { data: product, isLoading } = useGetProduct(productId);
 	const editProduct = useEditProduct({
 		onEdit: () => navigate('/product/list'),
+	});
+	const deleteProduct = useDeleteProduct({
+		onDelete: () => navigate('/product/list'),
 	});
 	if (isLoading) return <FormSkeleton />;
 	return (
@@ -23,6 +26,10 @@ const EditProduct = () => {
 				isEditing={editProduct.isPending}
 				onEdit={(formData) => {
 					editProduct.mutate(formData);
+				}}
+				isDeleting={deleteProduct.isPending}
+				onDelete={(id) => {
+					deleteProduct.mutate(id);
 				}}
 			/>
 		</div>
