@@ -34,7 +34,7 @@ Button.propTypes = {
 	onClick: PropTypes.func,
 	loading: PropTypes.bool,
 	disabled: PropTypes.bool,
-	color: PropTypes.oneOf(['blue', 'green', 'red']),
+	color: PropTypes.oneOf(['blue', 'green', 'red' ,'outline-red']),
 	type: PropTypes.oneOf(['button', 'submit']),
 };
 export default Button;
