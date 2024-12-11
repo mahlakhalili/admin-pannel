@@ -1,11 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
+import apiClient from '../../../apiClient';
 
 const useGetProduct = ({ productId }) => {
 	return useQuery({
 		queryKey: ['product', productId],
-		queryFn: () =>
-			axios.get(`http://localhost:1000/product/${productId}`).then((res) => res.data),
+		queryFn: () => apiClient.get(`/product/${productId}`).then((res) => res.data),
 	});
 };
 
