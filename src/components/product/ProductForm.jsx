@@ -55,6 +55,11 @@ const ProductForm = ({
 					type="number"
 				/>
 				<div className="btn  flex justify-center items-center gap-4 col-span-3 mt-4 text-lg">
+					<Button
+						text="انصراف"
+						color="outline-red"
+						to="/product/list"
+					/>
 					{mode === 'ADD' && (
 						<Button
 							color="blue"
@@ -84,11 +89,6 @@ const ProductForm = ({
 							/>
 						</>
 					)}
-					<Button
-						text="انصراف"
-						color='outline-red'
-						to="/product/list"
-					/>
 				</div>
 			</form>
 		</FormProvider>
