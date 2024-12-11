@@ -53,7 +53,7 @@ const ProductList = () => {
 };
 
 const TableRow = ({ row, id, title, price, discount, count }) => {
-	const deleteProduct = useDeleteProduct();
+	const deleteProduct = useDeleteProduct({});
 	return (
 		<tr key={id}>
 			<td>{row}</td>
