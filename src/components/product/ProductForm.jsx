@@ -10,6 +10,8 @@ const ProductForm = ({
 	isAdding = false,
 	onEdit = () => {},
 	isEditing = false,
+	onDelete = () => {},
+	isDeleting = false,
 }) => {
 	const formMethods = useForm({
 		defaultValues: {
@@ -52,7 +54,7 @@ const ProductForm = ({
 					label="تعداد"
 					type="number"
 				/>
-				<div className="btn  flex justify-center items-center col-span-3 mt-4 text-lg">
+				<div className="btn  flex justify-center items-center gap-4 col-span-3 mt-4 text-lg">
 					{mode === 'ADD' && (
 						<Button
 							color="blue"
@@ -65,15 +67,28 @@ const ProductForm = ({
 						/>
 					)}
 					{mode === 'EDIT' && (
-						<Button
-							text="ویرایش"
-							color="green"
-							loading={isEditing}
-							onClick={formMethods.handleSubmit((formData) => {
-								onEdit({ ...formData, id: data.id });
-							})}
-						/>
+						<>
+							<Button
+								text="حذف"
+								color="red"
+								loading={isDeleting}
+								onClick={() => onDelete(data.id)}
+							/>
+							<Button
+								text="ویرایش"
+								color="green"
+								loading={isEditing}
+								onClick={formMethods.handleSubmit((formData) => {
+									onEdit({ ...formData, id: data.id });
+								})}
+							/>
+						</>
 					)}
+					<Button
+						text="انصراف"
+						color='outline-red'
+						to="/product/list"
+					/>
 				</div>
 			</form>
 		</FormProvider>
@@ -86,6 +101,8 @@ ProductForm.propTypes = {
 	isAdding: PropTypes.bool,
 	onEdit: PropTypes.func,
 	isEditing: PropTypes.bool,
+	onDelete: PropTypes.func,
+	isDeleting: PropTypes.bool,
 };
 
 export default ProductForm;
