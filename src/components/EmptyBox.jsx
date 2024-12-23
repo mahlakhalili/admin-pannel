@@ -1,4 +1,6 @@
 import PropTypes from 'prop-types';
+import Icon from './Icon'
+import { FaMagnifyingGlass } from "react-icons/fa6";
 
 const EmptyBox = ({ title, text }) => {
 	return (
