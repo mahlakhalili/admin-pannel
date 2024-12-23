@@ -1,37 +1,3 @@
 {
-	"product": [
-		{
-			"id": "b480",
-			"title": "laptop",
-			"description": "laptop asus",
-			"price": "234434",
-			"discount": "4343",
-			"count": "434354"
-		},
-		{
-			"id": "0133",
-			"title": "گوشی سامسونگ",
-			"description": "گوشی سامسونگ s24",
-			"price": "560000000",
-			"discount": "",
-			"count": "4"
-		},
-		{
-			"id": "f4b2",
-			"title": "هدست",
-			"description": "هدست مشکی ",
-			"price": "1200000",
-			"discount": "",
-			"count": "4"
-		},
-
-		{
-			"id": "76e4",
-			"title": "هدفون مدل سامسونگ",
-			"description": "هدفون مدل سامسونگ",
-			"price": "12000000",
-			"discount": "299998",
-			"count": "4"
-		}
-	]
+  "product": []
 }
