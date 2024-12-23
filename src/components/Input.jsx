@@ -42,7 +42,7 @@ const Input = ({
 
 Input.propTypes = {
 	label: PropTypes.string,
-	type: PropTypes.oneOf(['text', 'email', 'password', 'number']),
+	type: PropTypes.oneOf(['text', 'email', 'password', 'number' , 'currency']),
 	placeholder: PropTypes.string,
 	name: PropTypes.string.isRequired,
 	defaultValue: PropTypes.string,
