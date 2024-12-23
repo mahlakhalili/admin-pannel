@@ -42,7 +42,7 @@ const ProductForm = ({
 				<Input
 					name="price"
 					label="قیمت"
-					type="number"
+					type="currency"
 				/>
 				<Input
 					name="discount"
