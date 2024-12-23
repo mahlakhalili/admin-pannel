@@ -67,7 +67,7 @@ const TableRow = ({ row, id, title, price, discount, count }) => {
 		<tr key={id}>
 			<td>{row}</td>
 			<td>{title}</td>
-			<td>{numberToCurrency(+price)}</td>
+			<td>{numberToCurrency(+price)}تومان</td>
 			<td>{discount || 0}</td>
 			<td>{count}</td>
 			<td>
