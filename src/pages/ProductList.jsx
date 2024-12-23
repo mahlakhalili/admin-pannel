@@ -75,12 +75,12 @@ const TableRow = ({ row, id, title, price, discount, count }) => {
 			<td>
 				<div className="btns flex items-center gap-4">
 					<Button
-						icon={<MdEdit />}
+						icon={<MdEdit size={20} />}
 						color="green"
 						to={`/product/edit/${id}`}
 					/>
 					<Button
-						icon={<MdDelete />}
+						icon={<MdDelete size={20}/>}
 						color="red"
 						loading={deleteProduct.isPending}
 						onClick={() => {
