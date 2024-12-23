@@ -5,7 +5,7 @@ import { FaMagnifyingGlass } from 'react-icons/fa6';
 const EmptyBox = ({ title, text }) => {
 	return (
 		<div className="flex flex-col justify-center items-center gap-6 py-10 bg-blue-100 rounded-lg">
-			<Icon>
+			<Icon className='text-gray-900'>
 				<FaMagnifyingGlass />
 			</Icon>
 			<h2 className="text-gray-900 text-xl">{title}</h2>
