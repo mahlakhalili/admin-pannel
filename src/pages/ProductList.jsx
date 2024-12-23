@@ -4,6 +4,8 @@ import ListSkeleton from '../skeleton/ListSkeleton';
 import PropTypes from 'prop-types';
 import EmptyBox from '../components/EmptyBox';
 import Button from '../components/Button';
+import { MdEdit } from 'react-icons/md';
+import { MdDelete } from 'react-icons/md';
 import { numberToCurrency } from '../helpers/Number';
 import { Link } from 'react-router-dom';
 const ProductList = () => {
@@ -73,12 +75,12 @@ const TableRow = ({ row, id, title, price, discount, count }) => {
 			<td>
 				<div className="btns flex items-center gap-4">
 					<Button
-						text="ویرایش"
+						icon={<MdEdit />}
 						color="green"
 						to={`/product/edit/${id}`}
 					/>
 					<Button
-						text="حذف"
+						icon={<MdDelete />}
 						color="red"
 						loading={deleteProduct.isPending}
 						onClick={() => {
