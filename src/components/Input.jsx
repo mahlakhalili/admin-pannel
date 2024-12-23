@@ -23,7 +23,7 @@ const Input = ({
 			<label>{label}</label>
 			<Tag
 				{...field}
-				type={type}
+				type={type === 'currency' ? 'number' : type}
 				placeholder={placeholder}
 			/>
 
