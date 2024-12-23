@@ -51,7 +51,7 @@
 		@apply bg-red-400 hover:bg-red-400;
 	}
 	.btn.outline-red {
-		@apply text-red-700 border border-red-700 bg-white hover:border-red-900 focus:ring-red-300 px-3 py-1 rounded-lg;;
+		@apply text-red-700 border border-red-700 bg-white hover:border-red-900 focus:ring-red-300 px-3 py-1 rounded-lg;
 	}
 	.table-wrapper {
 		@apply relative overflow-x-auto shadow-md sm:rounded-lg;
@@ -86,10 +86,33 @@
 		font-family: yekan;
 		src: url(./assets/font/BYekan.ttf);
 	}
+
+	* {
+		font-family: 'yekan';
+	}
+
+	html {
+		font-family: 'yekan';
+	}
+
+	body {
+		height: auto !important;
+		font-family: 'yekan';
+	}
+
+	input {
+		outline: none;
+	}
+
+	input.hide-arrow[type='number']::-webkit-inner-spin-button,
+	input.hide-arrow[type='number']::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
 }
 
-body,
-html,
-* {
-	font-family: 'yekan';
+/* input{
+	outline: none;
 }
+
+input.hide-arrow[type] */
