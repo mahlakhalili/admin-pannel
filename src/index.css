@@ -104,13 +104,13 @@
 		outline: none;
 	}
 
-	input.hide-arrow[type='number']::-webkit-inner-spin-button,
-	input.hide-arrow[type='number']::-webkit-outer-spin-button {
+	input[type='number']::-webkit-inner-spin-button,
+	input[type='number']::-webkit-outer-spin-button {
 		-webkit-appearance: none;
 		margin: 0;
 	}
 
-	input.hide-arrow[type='number']{
+	input[type='number'] {
 		-moz-appearance: textfield;
 	}
 }
