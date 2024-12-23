@@ -10,7 +10,7 @@ const Input = ({
 	className = '',
 	rules = {},
 }) => {
-	const { control } = useFormContext();
+	const { control, watch } = useFormContext();
 	const { field, fieldState } = useController({
 		control,
 		defaultValue,
@@ -26,6 +26,7 @@ const Input = ({
 				type={type === 'currency' ? 'number' : type}
 				placeholder={placeholder}
 			/>
+			{type === 'currency' && <span>{watch(name)}</span>}
 
 			{fieldState?.error && (
 				<span className="text-red-600 text-sm">{fieldState.error.message}</span>
