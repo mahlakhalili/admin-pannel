@@ -4,6 +4,7 @@ import ListSkeleton from '../skeleton/ListSkeleton';
 import PropTypes from 'prop-types';
 import EmptyBox from '../components/EmptyBox';
 import Button from '../components/Button';
+import { numberToCurrency } from '../helpers/Number';
 import { Link } from 'react-router-dom';
 const ProductList = () => {
 	const { data: products, isLoading } = useGetProductList();
@@ -66,7 +67,7 @@ const TableRow = ({ row, id, title, price, discount, count }) => {
 		<tr key={id}>
 			<td>{row}</td>
 			<td>{title}</td>
-			<td>{price}</td>
+			<td>{numberToCurrency(+price)}</td>
 			<td>{discount || 0}</td>
 			<td>{count}</td>
 			<td>
