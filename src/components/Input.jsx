@@ -29,7 +29,7 @@ const Input = ({
 			/>
 			{type === 'currency' && (
 				<span className="text-end text-gray-700 text-xs">
-					{numberToCurrency(watch(name))} تومان
+					{numberToCurrency(+watch(name))} تومان
 				</span>
 			)}
 
