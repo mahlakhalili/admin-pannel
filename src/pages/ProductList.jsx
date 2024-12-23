@@ -2,6 +2,7 @@ import useGetProductList from '../hooks/apis/product/useGetProductList';
 import useDeleteProduct from '../hooks/apis/product/useDeleteProduct';
 import ListSkeleton from '../skeleton/ListSkeleton';
 import PropTypes from 'prop-types';
+import EmptyBox from '../components/EmptyBox';
 import Button from '../components/Button';
 import { Link } from 'react-router-dom';
 const ProductList = () => {
@@ -19,6 +20,7 @@ const ProductList = () => {
 					افزودن محصول
 				</Link>
 			</div>
+			{products?.length === 0 && <EmptyBox />}
 
 			<div className="table-wrapper">
 				<table>
