@@ -46,7 +46,7 @@ const ProductForm = ({
 				/>
 				<Input
 					name="discount"
-					label="تخفیف"
+					label="درصد تخفیف"
 					type="number"
 				/>
 				<Input
