@@ -10,7 +10,7 @@
 		@apply max-w-screen-lg w-full mx-auto;
 	}
 	.form-input {
-		@apply grid gap-2;
+		@apply grid gap-2 h-max;
 	}
 
 	.form-input label {
