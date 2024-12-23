@@ -20,36 +20,42 @@ const ProductList = () => {
 					افزودن محصول
 				</Link>
 			</div>
-			{products?.length === 0 && <EmptyBox />}
-
-			<div className="table-wrapper">
-				<table>
-					<thead>
-						<tr>
-							<th>ردیف</th>
-							<th>عنوان محصول</th>
-							<th>قیمت</th>
-							<th>تخفیف</th>
-							<th>تعداد</th>
-							<th className="row">عملیات</th>
-						</tr>
-					</thead>
-					<tbody>
-						{products?.map((product, index) => (
-							<TableRow
-								key={product.id}
-								row={index + 1}
-								// {...product}
-								id={product.id}
-								title={product.title}
-								price={product.price}
-								discount={product.discount}
-								count={product.count}
-							/>
-						))}
-					</tbody>
-				</table>
-			</div>
+			{products?.length === 0 && (
+				<EmptyBox
+					title="هیچ عنوانی وجود ندارد."
+					text="لطفا یک محصول به لیست محصولات اضافه کنید."
+				/>
+			)}
+			{products?.length > 0 && (
+				<div className="table-wrapper">
+					<table>
+						<thead>
+							<tr>
+								<th>ردیف</th>
+								<th>عنوان محصول</th>
+								<th>قیمت</th>
+								<th>تخفیف</th>
+								<th>تعداد</th>
+								<th className="row">عملیات</th>
+							</tr>
+						</thead>
+						<tbody>
+							{products?.map((product, index) => (
+								<TableRow
+									key={product.id}
+									row={index + 1}
+									// {...product}
+									id={product.id}
+									title={product.title}
+									price={product.price}
+									discount={product.discount}
+									count={product.count}
+								/>
+							))}
+						</tbody>
+					</table>
+				</div>
+			)}
 		</div>
 	);
 };
