@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 const EmptyBox = ({ title, text }) => {
 	return (
 		<div className="flex flex-col justify-center items-center gap-6 py-10">
-			<h2>{title}</h2>
-			<p>{text}</p>
+			<h2 className="text-gray-900 text-xl">{title}</h2>
+			<p className="text-gray-700 text-lg">{text}</p>
 		</div>
 	);
 };
