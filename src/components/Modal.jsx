@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Button from './Button';
 import { IoCloseSharp } from 'react-icons/io5';
 
-const Modal = ({ title = '' , children }) => {
+const Modal = ({ title = '', children }) => {
 	return (
 		<div className="fixed flex items-center justify-center top-0 right-0 w-full h-full bg-black/80 backdrop-blur-sm z-50">
 			<div className="grid grid-rows-[max-content_1fr_max-content] bg-white rounded-lg overflow-hidden w-max h-max max-w-[90vw] max-h-[90vh] ">
@@ -11,10 +11,10 @@ const Modal = ({ title = '' , children }) => {
 					<Button
 						color="outline-red"
 						icon={<IoCloseSharp />}
-                        className='size-8'
+						className="size-8"
 					/>
 				</div>
-                <div>{children}</div>
+				<div className="overflow-y-auto overflow-x-hidden">{children}</div>
 			</div>
 		</div>
 	);
