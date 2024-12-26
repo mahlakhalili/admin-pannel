@@ -2,6 +2,7 @@ import { FormProvider, useForm } from 'react-hook-form';
 import PropTypes from 'prop-types';
 import Input from '../Input';
 import Button from '../Button';
+import Modal from '../Modal';
 
 const ProductForm = ({
 	mode = 'ADD',
