@@ -114,6 +114,7 @@ const ProductForm = ({
 					actions={[
 						{
 							text: 'انتخاب',
+							color:'blue',
 							onClick: () => {
 								console.log('Hi');
 							},
