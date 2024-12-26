@@ -128,7 +128,7 @@ const ProductForm = ({
 						},
 					]}
 				>
-					<div className="w-[700px]">choose a photo</div>
+					<div className="w-[700px]">choose a photo ...</div>
 				</Modal>
 			</form>
 		</FormProvider>
