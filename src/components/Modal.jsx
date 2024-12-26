@@ -11,7 +11,7 @@ const Modal = ({ title = '' }) => {
 					<Button
 						color="outline-red"
 						icon={<IoCloseSharp />}
-                        className=''
+                        className='size-8'
 					/>
 				</div>
 			</div>
