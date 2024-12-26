@@ -54,5 +54,6 @@ Input.propTypes = {
 	rules: PropTypes.object,
 	mode: PropTypes.oneOf(['INPUT', 'TEXTAREA']),
 	className: PropTypes.string,
+	onChange:PropTypes.func
 };
 export default Input;
