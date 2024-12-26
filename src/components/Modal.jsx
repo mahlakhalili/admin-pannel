@@ -17,7 +17,7 @@ const Modal = ({ title = '', children, actions = [] }) => {
 				<div className="modal-content overflow-y-auto overflow-x-hidden p-4">
 					{children}
 				</div>
-				<div className="modal-action flex items-center p-4 border-t border-gray-200">
+				<div className="modal-action flex flex-row-reverse items-center gap-4 p-4 border-t border-gray-200">
 					{actions.map((btn, index) => (
 						<Button
 							key={index}
