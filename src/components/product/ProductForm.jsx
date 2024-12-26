@@ -109,6 +109,7 @@ const ProductForm = ({
 						</>
 					)}
 				</div>
+				<Modal />
 			</form>
 		</FormProvider>
 	);
