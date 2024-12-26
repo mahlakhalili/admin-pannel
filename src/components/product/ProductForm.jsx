@@ -114,21 +114,21 @@ const ProductForm = ({
 					actions={[
 						{
 							text: 'انتخاب',
-							color:'blue',
+							color: 'blue',
 							onClick: () => {
 								console.log('Hi');
 							},
 						},
 						{
 							text: 'انصراف',
-							color:'outline-red',
+							color: 'outline-red',
 							onClick: () => {
 								console.log('Hi');
 							},
 						},
 					]}
 				>
-					<div className="w-[700px]">choose a photo ...</div>
+					<div className="w-[700px]">انتخاب عکس</div>
 				</Modal>
 			</form>
 		</FormProvider>
