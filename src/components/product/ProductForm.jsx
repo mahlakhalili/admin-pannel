@@ -20,7 +20,8 @@ const ProductForm = ({
 			price: data.price ?? '',
 			discount: data.discount ?? '',
 			count: data.count ?? '',
-			img:data.img ?? ''
+			img: data.img ?? '',
+			image: data.image ?? '',
 		},
 	});
 	const onSubmit = (formData) => {
@@ -30,7 +31,8 @@ const ProductForm = ({
 		fd.append('price', formData.price);
 		fd.append('discount', formData.discount);
 		fd.append('count', formData.count);
-		if (mode === 'ADD') onAdd(formData);
+		fd.append('image', formData.image);
+		if (mode === 'ADD') onAdd(fd);
 		else if (mode === 'EDIT') onEdit({ ...formData, id: data.id });
 	};
 
@@ -70,6 +72,9 @@ const ProductForm = ({
 					name="img"
 					label="آپلود عکس"
 					type="file"
+					onChange={(_, e) => {
+						formMethods.setValue(image, e.target.files[0]);
+					}}
 				/>
 				<div className="btn  flex justify-center items-center gap-4 col-span-3 mt-4 text-lg">
 					<Button
@@ -83,7 +88,7 @@ const ProductForm = ({
 							type="submit"
 							text="ذخیره"
 							loading={isAdding}
-							onClick={formMethods.handleSubmit(onSubmit())}
+							onClick={formMethods.handleSubmit(onSubmit)}
 						/>
 					)}
 					{mode === 'EDIT' && (
@@ -98,7 +103,7 @@ const ProductForm = ({
 								text="ویرایش"
 								color="green"
 								loading={isEditing}
-								onClick={formMethods.handleSubmit(onSubmit())}
+								onClick={formMethods.handleSubmit(onSubmit)}
 							/>
 						</>
 					)}
