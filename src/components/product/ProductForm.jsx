@@ -23,8 +23,15 @@ const ProductForm = ({
 		},
 	});
 	const onSubmit = (formData) => {
+		const fd = new FormData();
+		fd.append('title', formData.title);
+		fd.append('description', formData.description);
+		fd.append('price', formData.price);
+		fd.append('discount', formData.discount);
+		fd.append('count', formData.count);
+		fd.append('title', formData.title);
 		if (mode === 'ADD') onAdd(formData);
-		else if (mode === 'EDIT') onEdit({...formData, id:data.id});
+		else if (mode === 'EDIT') onEdit({ ...formData, id: data.id });
 	};
 
 	return (
