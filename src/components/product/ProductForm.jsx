@@ -20,6 +20,7 @@ const ProductForm = ({
 			price: data.price ?? '',
 			discount: data.discount ?? '',
 			count: data.count ?? '',
+			img:data.img ?? ''
 		},
 	});
 	const onSubmit = (formData) => {
@@ -29,7 +30,6 @@ const ProductForm = ({
 		fd.append('price', formData.price);
 		fd.append('discount', formData.discount);
 		fd.append('count', formData.count);
-		fd.append('title', formData.title);
 		if (mode === 'ADD') onAdd(formData);
 		else if (mode === 'EDIT') onEdit({ ...formData, id: data.id });
 	};
