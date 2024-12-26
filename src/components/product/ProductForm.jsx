@@ -22,6 +22,11 @@ const ProductForm = ({
 			count: data.count ?? '',
 		},
 	});
+	const onSubmit = (formData) => {
+		if (mode === 'ADD') onAdd(formData);
+		else if (mode === 'EDIT') onEdit(formData);
+	};
+
 	return (
 		<FormProvider {...formMethods}>
 			<form className="form grid grid-cols-3 gap-4">
@@ -71,9 +76,7 @@ const ProductForm = ({
 							type="submit"
 							text="ذخیره"
 							loading={isAdding}
-							onClick={formMethods.handleSubmit((formData) => {
-								onAdd(formData);
-							})}
+							onClick={formMethods.handleSubmit(onSubmit())}
 						/>
 					)}
 					{mode === 'EDIT' && (
@@ -88,9 +91,7 @@ const ProductForm = ({
 								text="ویرایش"
 								color="green"
 								loading={isEditing}
-								onClick={formMethods.handleSubmit((formData) => {
-									onEdit({ ...formData, id: data.id });
-								})}
+								onClick={formMethods.handleSubmit(onSubmit())}
 							/>
 						</>
 					)}
