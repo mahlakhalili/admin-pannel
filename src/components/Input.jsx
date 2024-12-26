@@ -10,6 +10,7 @@ const Input = ({
 	mode = 'INPUT',
 	className = '',
 	rules = {},
+	onChange = () => {},
 }) => {
 	const { control, watch } = useFormContext();
 	const { field, fieldState } = useController({
@@ -26,6 +27,10 @@ const Input = ({
 				{...field}
 				type={type === 'currency' ? 'number' : type}
 				placeholder={placeholder}
+				onChange={(e) => {
+					onChange(e.target.value, e);
+					if (field) return field.onChange(e);
+				}}
 			/>
 			{type === 'currency' && (
 				<span className="text-end text-gray-700 text-xs">
