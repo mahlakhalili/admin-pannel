@@ -6,7 +6,7 @@ const Modal = ({ title = '', children, actions = [] }) => {
 	return (
 		<div className=" modal-dimmer fixed flex items-center justify-center top-0 right-0 w-full h-full bg-black/80 backdrop-blur-sm z-50">
 			<div className="modal-segment grid grid-rows-[max-content_1fr_max-content] bg-white rounded-lg overflow-hidden w-max h-max max-w-[90vw] max-h-[90vh] ">
-				<div className="modal-headerflex items-center justify-between p-4 border-b ">
+				<div className="modal-header flex items-center justify-between p-4 border-b ">
 					<h3 className="text-xl font-semibold text-gray-900 ">{title}</h3>
 					<Button
 						color="outline-red"
@@ -18,8 +18,13 @@ const Modal = ({ title = '', children, actions = [] }) => {
 					{children}
 				</div>
 				<div className="modal-action flex items-center p-4 border-t border-gray-200">
-
-                </div>
+					{actions.map((btn, index) => (
+						<Button
+							key={index}
+							{...btn}
+						/>
+					))}
+				</div>
 			</div>
 		</div>
 	);
