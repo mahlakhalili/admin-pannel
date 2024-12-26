@@ -24,7 +24,7 @@ const ProductForm = ({
 	});
 	const onSubmit = (formData) => {
 		if (mode === 'ADD') onAdd(formData);
-		else if (mode === 'EDIT') onEdit(formData);
+		else if (mode === 'EDIT') onEdit({...formData, id:data.id});
 	};
 
 	return (
