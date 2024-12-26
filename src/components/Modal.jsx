@@ -2,7 +2,7 @@ const Modal = ({ title = '' }) => {
 	return (
 		<div className="fixed top-0 right-0 w-full h-full bg-black/80 backdrop-blur-sm z-50">
 			<div className="grid grid-rows-[max-content_1fr_max-content] bg-white ">
-				<div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+				<div className="flex items-center justify-between p-4 border-b ">
 					<h3 className="text-xl font-semibold text-gray-900 dark:text-white">{title}</h3>
 					<button
 						type="button"
