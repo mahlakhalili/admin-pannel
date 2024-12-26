@@ -54,7 +54,11 @@ const ProductForm = ({
 					label="تعداد"
 					type="number"
 				/>
-				<Input name="img"  />
+				<Input
+					name="img"
+					label="آپلود عکس"
+					type="file"
+				/>
 				<div className="btn  flex justify-center items-center gap-4 col-span-3 mt-4 text-lg">
 					<Button
 						text="انصراف"
