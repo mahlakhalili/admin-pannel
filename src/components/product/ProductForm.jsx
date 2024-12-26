@@ -109,10 +109,11 @@ const ProductForm = ({
 						</>
 					)}
 				</div>
-				<Modal title='انتخاب عکس'>
-					<div className='w-[700px]'>
-						choose a photo
-					</div>
+				<Modal
+					title="انتخاب عکس"
+					actions={[{ text: 'انتخاب' , onClick:()=>{} }]}
+				>
+					<div className="w-[700px]">choose a photo</div>
 				</Modal>
 			</form>
 		</FormProvider>
