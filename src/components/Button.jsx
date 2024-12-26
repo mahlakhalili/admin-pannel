@@ -8,6 +8,7 @@ const Button = ({
 	onClick,
 	to,
 	icon,
+	className = '',
 	color = '',
 	type = 'button',
 	loading = false,
@@ -22,6 +23,7 @@ const Button = ({
 			className={classNames({
 				btn: true,
 				[color]: color,
+				[className]: className,
 				disabled: loading || disabled,
 			})}
 			to={to}
@@ -43,6 +45,7 @@ const Button = ({
 Button.propTypes = {
 	text: PropTypes.string,
 	to: PropTypes.string,
+	className: PropTypes.string,
 	onClick: PropTypes.func,
 	loading: PropTypes.bool,
 	disabled: PropTypes.bool,
