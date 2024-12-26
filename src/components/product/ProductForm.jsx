@@ -111,7 +111,14 @@ const ProductForm = ({
 				</div>
 				<Modal
 					title="انتخاب عکس"
-					actions={[{ text: 'انتخاب' , onClick:()=>{} }]}
+					actions={[
+						{
+							text: 'انتخاب',
+							onClick: () => {
+								console.log('Hi');
+							},
+						},
+					]}
 				>
 					<div className="w-[700px]">choose a photo</div>
 				</Modal>
