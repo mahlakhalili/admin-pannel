@@ -118,6 +118,12 @@ const ProductForm = ({
 								console.log('Hi');
 							},
 						},
+						{
+							text: 'انصراف',
+							onClick: () => {
+								console.log('Hi');
+							},
+						},
 					]}
 				>
 					<div className="w-[700px]">choose a photo</div>
