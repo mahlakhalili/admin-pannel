@@ -109,7 +109,9 @@ const ProductForm = ({
 						</>
 					)}
 				</div>
-				<Modal title='انتخاب عکس' />
+				<Modal title='انتخاب عکس'>
+					
+				</Modal>
 			</form>
 		</FormProvider>
 	);
