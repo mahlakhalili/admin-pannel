@@ -73,17 +73,15 @@ const ProductForm = ({
 					type="number"
 				/>
 
-				<div className="flex items-center justify-center w-full">
-					<div className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50   hover:bg-gray-100  ">
-						<div className="flex flex-col items-center justify-center pt-5 pb-6">
-							<BsCloudUpload />
-							<p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
-								Click to upload
-							</p>
-							<p className="text-xs text-gray-500 dark:text-gray-400">
-								SVG, PNG, JPG or GIF (MAX. 800x400px)
-							</p>
-						</div>
+				<div className="flex items-center justify-center h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50   hover:bg-gray-100 ">
+					<div className="flex flex-col items-center justify-center pt-5 pb-6">
+						<BsCloudUpload />
+						<p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
+							Click to upload
+						</p>
+						<p className="text-xs text-gray-500 dark:text-gray-400">
+							SVG, PNG, JPG or GIF (MAX. 800x400px)
+						</p>
 					</div>
 				</div>
 
