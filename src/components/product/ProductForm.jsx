@@ -114,14 +114,14 @@ const ProductForm = ({
 					actions={[
 						{
 							text: 'انتخاب',
-							color: 'blue',
+							color:'blue',
 							onClick: () => {
 								console.log('Hi');
 							},
 						},
 						{
 							text: 'انصراف',
-							color: 'outline-red',
+							color:'outline-red',
 							onClick: () => {
 								console.log('Hi');
 							},
