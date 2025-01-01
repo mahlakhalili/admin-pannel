@@ -30,8 +30,9 @@ const Modal = ({ title = '', children, actions = [] }) => {
 	);
 };
 Modal.propTypes = {
-	title: PropTypes.string,
-    children: PropTypes.node.isRequired
+	title: PropTypes.string.isRequired,
+	children: PropTypes.node.isRequired,
+	actions: PropTypes.string.isRequired,
 };
 
 export default Modal;
