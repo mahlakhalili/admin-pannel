@@ -15,6 +15,7 @@ const ProductForm = ({
 	onDelete = () => {},
 	isDeleting = false,
 }) => {
+	const [modalDisplay, setModalDisplay] = useState(false);
 	const formMethods = useForm({
 		defaultValues: {
 			title: data.title ?? '',
@@ -110,27 +111,29 @@ const ProductForm = ({
 						</>
 					)}
 				</div>
-				<Modal
-					title="انتخاب عکس"
-					actions={[
-						{
-							text: 'انتخاب',
-							color:'blue',
-							onClick: () => {
-								console.log('Hi');
+				{modalDisplay && (
+					<Modal
+						title="انتخاب عکس"
+						actions={[
+							{
+								text: 'انتخاب',
+								color: 'blue',
+								onClick: () => {
+									console.log('Hi');
+								},
 							},
-						},
-						{
-							text: 'انصراف',
-							color:'outline-red',
-							onClick: () => {
-								console.log('Hi');
+							{
+								text: 'انصراف',
+								color: 'outline-red',
+								onClick: () => {
+									console.log('Hi');
+								},
 							},
-						},
-					]}
-				>
-					<div className="w-[700px]">انتخاب عکس</div>
-				</Modal>
+						]}
+					>
+						<div className="w-[700px]">انتخاب عکس</div>
+					</Modal>
+				)}
 			</form>
 		</FormProvider>
 	);
