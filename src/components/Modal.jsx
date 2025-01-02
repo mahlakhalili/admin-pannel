@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Button from './Button';
 import { IoCloseSharp } from 'react-icons/io5';
 
-const Modal = ({ title = '', children, actions = [] }) => {
+const Modal = ({ title = '', children, actions = [], onClose = () => {} }) => {
 	return (
 		<div className=" modal-dimmer fixed flex items-center justify-center top-0 right-0 w-full h-full bg-black/80 backdrop-blur-sm z-50">
 			<div className="modal-segment grid grid-rows-[max-content_1fr_max-content] bg-white rounded-lg overflow-hidden w-max h-max max-w-[90vw] max-h-[90vh] ">
@@ -12,6 +12,7 @@ const Modal = ({ title = '', children, actions = [] }) => {
 						color="outline-red"
 						icon={<IoCloseSharp />}
 						className="size-8"
+						onClick={() => onClose()}
 					/>
 				</div>
 				<div className="modal-content overflow-y-auto overflow-x-hidden p-4">
@@ -33,6 +34,7 @@ Modal.propTypes = {
 	title: PropTypes.string.isRequired,
 	children: PropTypes.node.isRequired,
 	actions: PropTypes.string.isRequired,
+	onClose: PropTypes.func,
 };
 
 export default Modal;
