@@ -140,9 +140,7 @@ const ProductForm = ({
 							{
 								text: 'انصراف',
 								color: 'outline-red',
-								onClick: () => {
-									setModalDisplay(false);
-								},
+								onClick: () => setModalDisplay(false),
 							},
 						]}
 					>
