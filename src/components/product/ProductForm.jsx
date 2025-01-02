@@ -145,7 +145,10 @@ const ChooseImgModal = ({ onClose }) => {
 				{
 					text: 'انتخاب',
 					color: 'blue',
-					onClick: () => onClose,
+					onClick: () =>
+						formMethods.handleSubmit((data) => {
+							data.image;
+						}),
 				},
 				{
 					text: 'انصراف',
