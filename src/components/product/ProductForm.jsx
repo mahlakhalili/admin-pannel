@@ -29,7 +29,7 @@ const ProductForm = ({
 			// image: data.image ?? '',
 		},
 	});
-	const { handleSubmit , setValue , getValues, watch} = formMethods;
+	const { handleSubmit, setValue, getValues, wat } = formMethods;
 	const onSubmit = (formData) => {
 		// const fd = new FormData();
 		// fd.append('title', formData.title);
@@ -77,7 +77,7 @@ const ProductForm = ({
 				<div className="col-span-3">
 					<div
 						className="flex flex-col items-center justify-center h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50   hover:bg-gray-100 pt-5 pb-6 text-gray-500 "
-						onClick={() => setValue('title')}
+						onClick={() => setModalDisplay(true)}
 					>
 						<BsCloudUpload size={30} />
 						<p className="mb-2 text-sm  dark:text-gray-400">Click to upload</p>
@@ -130,7 +130,9 @@ const ProductForm = ({
 				{modalDisplay && (
 					<ChooseImgModal
 						onClose={() => setModalDisplay(false)}
-						onAddImg={(image) => {}}
+						onAddImg={(image) => {
+							setValue('images', image);
+						}}
 					/>
 				)}
 			</form>
