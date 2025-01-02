@@ -24,10 +24,12 @@ const ProductForm = ({
 			price: data.price ?? '',
 			discount: data.discount ?? '',
 			count: data.count ?? '',
+			images: data.images ?? [],
 			// img: data.img ?? '',
 			// image: data.image ?? '',
 		},
 	});
+	const { handleSubmit } = formMethods;
 	const onSubmit = (formData) => {
 		// const fd = new FormData();
 		// fd.append('title', formData.title);
@@ -125,7 +127,12 @@ const ProductForm = ({
 						</>
 					)}
 				</div>
-				{modalDisplay && <ChooseImgModal onClose={() => setModalDisplay(false)} />}
+				{modalDisplay && (
+					<ChooseImgModal
+						onClose={() => setModalDisplay(false)}
+						onAddImg={(image) => {}}
+					/>
+				)}
 			</form>
 		</FormProvider>
 	);
@@ -170,6 +177,7 @@ const ChooseImgModal = ({ onClose, onAddImg }) => {
 };
 ChooseImgModal.propTypes = {
 	onClose: PropTypes.func,
+	onAddImg: PropTypes.func,
 };
 ProductForm.propTypes = {
 	mode: PropTypes.oneOf(['ADD', 'EDIT']),
