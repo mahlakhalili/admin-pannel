@@ -29,7 +29,7 @@ const ProductForm = ({
 			// image: data.image ?? '',
 		},
 	});
-	const { handleSubmit, setValue, getValues, wat } = formMethods;
+	const { handleSubmit, setValue, getValues, watch } = formMethods;
 	const onSubmit = (formData) => {
 		// const fd = new FormData();
 		// fd.append('title', formData.title);
@@ -85,6 +85,7 @@ const ProductForm = ({
 							SVG, PNG, JPG or GIF (MAX. 800x400px)
 						</p>
 					</div>
+					{watch('images')}
 				</div>
 
 				{/* <Input
