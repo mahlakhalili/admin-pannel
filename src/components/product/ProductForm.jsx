@@ -131,7 +131,8 @@ const ProductForm = ({
 					<ChooseImgModal
 						onClose={() => setModalDisplay(false)}
 						onAddImg={(image) => {
-							setValue('images', [...getValues('images') , image]);
+							setValue('images', [...getValues('images'), image]);
+							setModalDisplay(false);
 						}}
 					/>
 				)}
