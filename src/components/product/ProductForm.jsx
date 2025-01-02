@@ -149,7 +149,13 @@ const ChooseImgModal = ({ onClose }) => {
 				},
 			]}
 		>
-			<div className="w-[700px]">انتخاب عکس</div>
+			<div className="w-[700px]">
+				<Input
+					name="image"
+					type="text"
+					label="انتخاب عکس"
+				/>
+			</div>
 		</Modal>
 	);
 };
