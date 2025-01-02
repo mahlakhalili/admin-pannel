@@ -125,30 +125,32 @@ const ProductForm = ({
 						</>
 					)}
 				</div>
-				{modalDisplay && (
-					<Modal
-						title="انتخاب عکس"
-						onClose={() => setModalDisplay(false)}
-						actions={[
-							{
-								text: 'انتخاب',
-								color: 'blue',
-								onClick: () => {
-									console.log('Hi');
-								},
-							},
-							{
-								text: 'انصراف',
-								color: 'outline-red',
-								onClick: () => setModalDisplay(false),
-							},
-						]}
-					>
-						<div className="w-[700px]">انتخاب عکس</div>
-					</Modal>
-				)}
+				{modalDisplay && <ChooseImgModal />}
 			</form>
 		</FormProvider>
+	);
+};
+
+const ChooseImgModal = ({ onClose }) => {
+	return (
+		<Modal
+			title="انتخاب عکس"
+			onClose={onClose}
+			actions={[
+				{
+					text: 'انتخاب',
+					color: 'blue',
+					onClick: () => onClose,
+				},
+				{
+					text: 'انصراف',
+					color: 'outline-red',
+					onClick: () => onClose,
+				},
+			]}
+		>
+			<div className="w-[700px]">انتخاب عکس</div>
+		</Modal>
 	);
 };
 ProductForm.propTypes = {
