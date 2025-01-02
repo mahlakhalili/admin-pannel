@@ -74,7 +74,7 @@ const ProductForm = ({
 					label="تعداد"
 					type="number"
 				/>
-				<div className="col-span-3">
+				<div className="grid grid-cols-5 gap-4 col-span-3">
 					<div
 						className="flex flex-col items-center justify-center h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50   hover:bg-gray-100 pt-5 pb-6 text-gray-500 "
 						onClick={() => setModalDisplay(true)}
