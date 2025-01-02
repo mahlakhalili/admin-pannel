@@ -74,7 +74,18 @@ const ProductForm = ({
 					label="تعداد"
 					type="number"
 				/>
-				<div className="grid grid-cols-5 gap-4 col-span-3">
+				<div className="grid grid-cols-4 gap-4 col-span-3">
+					{watch('images').map((img, index) => (
+						<div
+							key={index}
+							className="flex items-center justify-center aspect-square border rounded-lg"
+						>
+							<img
+								src={img}
+								alt="photo"
+							/>
+						</div>
+					))}
 					<div
 						className="flex flex-col items-center justify-center h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50   hover:bg-gray-100 pt-5 pb-6 text-gray-500 "
 						onClick={() => setModalDisplay(true)}
@@ -85,17 +96,6 @@ const ProductForm = ({
 							SVG, PNG, JPG or GIF (MAX. 800x400px)
 						</p>
 					</div>
-					{watch('images').map((img, index) => (
-						<div
-							key={index}
-							className="flex items-center justify-center aspect-square"
-						>
-							<img
-								src={img}
-								alt="photo"
-							/>
-						</div>
-					))}
 				</div>
 
 				{/* <Input
