@@ -154,12 +154,14 @@ const ChooseImgModal = ({ onClose }) => {
 				},
 			]}
 		>
-			<div className="w-[700px]">
-				<Input
-					name="image"
-					label="انتخاب عکس"
-				/>
-			</div>
+			<FormProvider {...formMethods}>
+				<div className="w-[700px]">
+					<Input
+						name="image"
+						label="انتخاب عکس"
+					/>
+				</div>
+			</FormProvider>
 		</Modal>
 	);
 };
