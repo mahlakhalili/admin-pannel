@@ -72,13 +72,14 @@ const ProductForm = ({
 					label="تعداد"
 					type="number"
 				/>
-
-				<div className="flex flex-col items-center justify-center h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50   hover:bg-gray-100 pt-5 pb-6 text-gray-500 ">
-					<BsCloudUpload />
-					<p className="mb-2 text-sm  dark:text-gray-400">Click to upload</p>
-					<p className="text-xs  dark:text-gray-400">
-						SVG, PNG, JPG or GIF (MAX. 800x400px)
-					</p>
+				<div className="col-span-3">
+					<div className="flex flex-col items-center justify-center h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50   hover:bg-gray-100 pt-5 pb-6 text-gray-500 ">
+						<BsCloudUpload size={30} />
+						<p className="mb-2 text-sm  dark:text-gray-400">Click to upload</p>
+						<p className="text-xs  dark:text-gray-400">
+							SVG, PNG, JPG or GIF (MAX. 800x400px)
+						</p>
+					</div>
 				</div>
 
 				{/* <Input
