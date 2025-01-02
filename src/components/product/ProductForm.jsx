@@ -131,7 +131,7 @@ const ProductForm = ({
 	);
 };
 
-const ChooseImgModal = ({ onClose }) => {
+const ChooseImgModal = ({ onClose, onAddImg }) => {
 	const formMethods = useForm({
 		defaultValues: {
 			image: '',
@@ -147,7 +147,7 @@ const ChooseImgModal = ({ onClose }) => {
 					color: 'blue',
 					onClick: () =>
 						formMethods.handleSubmit((data) => {
-							data.image;
+							onAddImg(data.image);
 						}),
 				},
 				{
