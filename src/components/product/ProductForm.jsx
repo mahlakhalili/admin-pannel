@@ -125,7 +125,7 @@ const ProductForm = ({
 						</>
 					)}
 				</div>
-				{modalDisplay && <ChooseImgModal />}
+				{modalDisplay && <ChooseImgModal onClose={() => setModalDisplay(false)} />}
 			</form>
 		</FormProvider>
 	);
@@ -152,6 +152,9 @@ const ChooseImgModal = ({ onClose }) => {
 			<div className="w-[700px]">انتخاب عکس</div>
 		</Modal>
 	);
+};
+ChooseImgModal.propTypes = {
+	onClose: PropTypes.func,
 };
 ProductForm.propTypes = {
 	mode: PropTypes.oneOf(['ADD', 'EDIT']),
