@@ -122,7 +122,7 @@ const ProductForm = ({
 							type="submit"
 							text="ذخیره"
 							loading={isAdding}
-							onClick={formMethods.handleSubmit(onSubmit)}
+							onClick={handleSubmit(onSubmit)}
 						/>
 					)}
 					{mode === 'EDIT' && (
@@ -137,7 +137,7 @@ const ProductForm = ({
 								text="ویرایش"
 								color="green"
 								loading={isEditing}
-								onClick={formMethods.handleSubmit(onSubmit)}
+								onClick={handleSubmit(onSubmit)}
 							/>
 						</>
 					)}
