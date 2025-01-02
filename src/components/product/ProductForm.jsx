@@ -85,7 +85,17 @@ const ProductForm = ({
 							SVG, PNG, JPG or GIF (MAX. 800x400px)
 						</p>
 					</div>
-					{watch('images')}
+					{watch('images').map((img, index) => (
+						<div
+							key={index}
+							className="flex items-center justify-center aspect-square"
+						>
+							<img
+								src={img}
+								alt="photo"
+							/>
+						</div>
+					))}
 				</div>
 
 				{/* <Input
