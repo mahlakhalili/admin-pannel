@@ -129,11 +129,11 @@ const ProductForm = ({
 				</div>
 				{modalDisplay && (
 					<ChooseImgModal
-						onClose={() => setModalDisplay(false)}
 						onAddImg={(image) => {
 							setValue('images', [...getValues('images'), image]);
 							setModalDisplay(false);
 						}}
+						onClose={() => setModalDisplay(false)}
 					/>
 				)}
 			</form>
