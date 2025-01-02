@@ -132,6 +132,11 @@ const ProductForm = ({
 };
 
 const ChooseImgModal = ({ onClose }) => {
+	const formMethods = useForm({
+		defaultValues: {
+			image: '',
+		},
+	});
 	return (
 		<Modal
 			title="انتخاب عکس"
@@ -152,7 +157,6 @@ const ChooseImgModal = ({ onClose }) => {
 			<div className="w-[700px]">
 				<Input
 					name="image"
-					type="text"
 					label="انتخاب عکس"
 				/>
 			</div>
