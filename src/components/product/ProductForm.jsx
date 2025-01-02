@@ -87,7 +87,7 @@ const ProductForm = ({
 						</div>
 					))}
 					<div
-						className="flex flex-col items-center justify-center h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50   hover:bg-gray-100 pt-5 pb-6 text-gray-500 "
+						className="col-span-4 flex flex-col items-center justify-center h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50   hover:bg-gray-100 pt-5 pb-6 text-gray-500 "
 						onClick={() => setModalDisplay(true)}
 					>
 						<BsCloudUpload size={30} />
