@@ -1,6 +1,7 @@
 import { FormProvider, useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { BsCloudUpload } from 'react-icons/bs';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import Input from '../Input';
 import Button from '../Button';
@@ -87,7 +88,10 @@ const ProductForm = ({
 						</div>
 					))}
 					<div
-						className="col-span-4 flex flex-col items-center justify-center h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50   hover:bg-gray-100 pt-5 pb-6 text-gray-500 "
+						className={classNames({
+							'flex flex-col items-center justify-center h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50   hover:bg-gray-100 pt-5 pb-6 text-gray-500': true,
+							'col-span-4': watch('images').length === 0,
+						})}
 						onClick={() => setModalDisplay(true)}
 					>
 						<BsCloudUpload size={30} />
