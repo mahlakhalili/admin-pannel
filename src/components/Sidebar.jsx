@@ -5,6 +5,7 @@ import { MdOutlineProductionQuantityLimits } from 'react-icons/md';
 import { CiBoxList } from 'react-icons/ci';
 import { IoIosAddCircleOutline } from 'react-icons/io';
 import { BiCategory } from 'react-icons/bi';
+import { IoIosArrowDown } from 'react-icons/io';
 
 const Sidebar = () => {
 	const navBar = [
@@ -98,6 +99,9 @@ const NavBarItem = ({ label, icon, subMenu }) => {
 			<button className="flex items-center gap-1 w-full p-2 text-gray-900 rounded-lg hover:bg-gray-200">
 				<Icon>{icon}</Icon>
 				<span>{label}</span>
+				<Icon>
+					<IoIosArrowDown />
+				</Icon>
 			</button>
 			<ul className="py-2 space-y-0.5">
 				{subMenu.map((subMenu, index) => (
