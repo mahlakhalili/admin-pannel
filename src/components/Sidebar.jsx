@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import Icon from './Icon';
 import { MdOutlineProductionQuantityLimits } from 'react-icons/md';
@@ -94,11 +95,12 @@ const Sidebar = () => {
 	);
 };
 const NavBarItem = ({ label, icon, subMenu }) => {
+	const [subMenuDisplay, setSubMenuDisplay] = useState(false);
 	return (
 		<li>
 			<button className="flex items-center gap-1 w-full p-2 text-gray-900 rounded-lg hover:bg-gray-200">
 				<Icon>{icon}</Icon>
-				<span className='me-auto'>{label}</span>
+				<span className="me-auto">{label}</span>
 				<Icon size={16}>
 					<IoIosArrowDown />
 				</Icon>
