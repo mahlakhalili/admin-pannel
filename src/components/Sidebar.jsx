@@ -98,8 +98,8 @@ const NavBarItem = ({ label, icon, subMenu }) => {
 		<li>
 			<button className="flex items-center gap-1 w-full p-2 text-gray-900 rounded-lg hover:bg-gray-200">
 				<Icon>{icon}</Icon>
-				<span>{label}</span>
-				<Icon>
+				<span className='me-auto'>{label}</span>
+				<Icon size={16}>
 					<IoIosArrowDown />
 				</Icon>
 			</button>
