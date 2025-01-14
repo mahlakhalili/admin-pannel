@@ -99,11 +99,11 @@ const NavBarItem = ({ label, icon, subMenu }) => {
 				<Icon>{icon}</Icon>
 				<span>{label}</span>
 			</button>
-			<ul className="py-1 space-y-0.5">
+			<ul>
 				{subMenu.map((subMenu, index) => (
 					<li
 						key={index}
-						className="w-full p-2 text-gray-900 rounded-lg hover:bg-gray-200"
+						className="w-full p-2 ps-10 text-gray-900 rounded-lg hover:bg-gray-200"
 					>
 						<NavLink to={subMenu.href}>{subMenu.label}</NavLink>
 					</li>
