@@ -68,5 +68,16 @@ const Sidebar = () => {
 		</div>
 	);
 };
+const navBarItem = ({ label, icon, subMenu }) => {
+	return (
+		<li>
+			<Button />
+			<ul>
+				<li></li>
+				<li></li>
+			</ul>
+		</li>
+	);
+};
 
 export default Sidebar;
