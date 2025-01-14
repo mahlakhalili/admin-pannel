@@ -98,7 +98,10 @@ const NavBarItem = ({ label, icon, subMenu }) => {
 	const [subMenuDisplay, setSubMenuDisplay] = useState(false);
 	return (
 		<li>
-			<button className="flex items-center gap-1 w-full p-2 text-gray-900 rounded-lg hover:bg-gray-200">
+			<button
+				onClick={() => setSubMenuDisplay(true)}
+				className="flex items-center gap-1 w-full p-2 text-gray-900 rounded-lg hover:bg-gray-200"
+			>
 				<Icon>{icon}</Icon>
 				<span className="me-auto">{label}</span>
 				<Icon size={16}>
