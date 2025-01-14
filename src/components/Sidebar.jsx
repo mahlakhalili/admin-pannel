@@ -4,18 +4,23 @@ import { FaList } from 'react-icons/fa6';
 import { MdOutlineAddCircleOutline } from 'react-icons/md';
 
 const Sidebar = () => {
-	const navbar = [
+	const navBar =[
 		{
-			icon: <FaList />,
-			text: 'لیست محصولات',
-			link: '/product/list',
-		},
-		{
-			icon: <MdOutlineAddCircleOutline />,
-			text: 'افزودن محصول',
-			link: '/product/add',
-		},
-	];
+			label:'محصول'
+		}
+	]
+	// const navbar = [
+	// 	{
+	// 		icon: <FaList />,
+	// 		text: 'لیست محصولات',
+	// 		link: '/product/list',
+	// 	},
+	// 	{
+	// 		icon: <MdOutlineAddCircleOutline />,
+	// 		text: 'افزودن محصول',
+	// 		link: '/product/add',
+	// 	},
+	// ];
 	return (
 		<div>
 			<aside
