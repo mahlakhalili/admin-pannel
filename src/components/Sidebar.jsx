@@ -105,21 +105,23 @@ const NavBarItem = ({ label, icon, subMenu }) => {
 					<IoIosArrowDown />
 				</Icon>
 			</button>
-			<ul className="py-2 space-y-0.5">
-				{subMenu.map((subMenu, index) => (
-					<li
-						key={index}
-						className="w-full"
-					>
-						<NavLink
-							to={subMenu.href}
-							className="flex w-full p-2 ps-10 text-gray-900 rounded-lg hover:bg-gray-200"
+			{subMenuDisplay && (
+				<ul className="py-2 space-y-0.5">
+					{subMenu.map((subMenu, index) => (
+						<li
+							key={index}
+							className="w-full"
 						>
-							{subMenu.label}
-						</NavLink>
-					</li>
-				))}
-			</ul>
+							<NavLink
+								to={subMenu.href}
+								className="flex w-full p-2 ps-10 text-gray-900 rounded-lg hover:bg-gray-200"
+							>
+								{subMenu.label}
+							</NavLink>
+						</li>
+					))}
+				</ul>
+			)}
 		</li>
 	);
 };
