@@ -1,14 +1,31 @@
 import { NavLink } from 'react-router-dom';
 import Icon from './Icon';
-import { AiOutlineProduct } from 'react-icons/ai';
+import { MdOutlineProductionQuantityLimits } from 'react-icons/md';
 import { CiBoxList } from 'react-icons/ci';
 import { IoIosAddCircleOutline } from 'react-icons/io';
+import { BiCategory } from 'react-icons/bi';
 
 const Sidebar = () => {
 	const navBar = [
 		{
 			label: 'محصول',
-			icon: <AiOutlineProduct />,
+			icon: <MdOutlineProductionQuantityLimits />,
+			subMenu: [
+				{
+					label: 'لیست محصولات',
+					icon: <CiBoxList />,
+					href: '/product/list',
+				},
+				{
+					label: 'افزودن محصولات',
+					icon: <IoIosAddCircleOutline />,
+					href: '/product/add',
+				},
+			],
+		},
+		{
+			label: 'دسته بندی',
+			icon: <BiCategory />,
 			subMenu: [
 				{
 					label: 'لیست محصولات',
@@ -43,8 +60,8 @@ const Sidebar = () => {
 				aria-label="Sidebar"
 			>
 				<div className="h-full w-full px-3 py-4 overflow-y-auto bg-gray-50">
-					<ul className="space-y-2 font-medium">
-						{navbar.map((nav, index) => (
+					<ul className="space-y-2 font-medium text-lg">
+						{navBar.map((nav, index) => (
 							<NavBarItem
 								key={index}
 								label={nav.label}
