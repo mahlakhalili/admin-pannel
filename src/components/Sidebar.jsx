@@ -74,7 +74,9 @@ const navBarItem = ({ label, icon, subMenu }) => {
 			<Button />
 			<ul>
 				{subMenu.map((subMenu, index) => (
-					<li key={index}>{subMenu.href}</li>
+					<li key={index}>
+						<NavLink to={subMenu.href}>{subMenu.label}</NavLink>
+					</li>
 				))}
 			</ul>
 		</li>
