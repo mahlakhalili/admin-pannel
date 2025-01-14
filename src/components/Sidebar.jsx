@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import Icon from './Icon';
 import { MdOutlineProductionQuantityLimits } from 'react-icons/md';
@@ -28,14 +29,14 @@ const Sidebar = () => {
 			icon: <BiCategory />,
 			subMenu: [
 				{
-					label: 'لیست محصولات',
+					label: 'لیست دسته بندی',
 					icon: <CiBoxList />,
-					href: '/product/list',
+					href: '/category/list',
 				},
 				{
-					label: 'افزودن محصولات',
+					label: 'افزودن دسته بندی',
 					icon: <IoIosAddCircleOutline />,
-					href: '/product/add',
+					href: '/category/add',
 				},
 			],
 		},
@@ -107,6 +108,10 @@ const NavBarItem = ({ label, icon, subMenu }) => {
 			</ul>
 		</li>
 	);
+};
+NavBarItem.propTypes = {
+	label: PropTypes.string,
+	icon: PropTypes.string,
 };
 
 export default Sidebar;
