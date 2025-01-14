@@ -1,12 +1,21 @@
 import { NavLink } from 'react-router-dom';
 import Icon from './Icon';
 import { FaList } from 'react-icons/fa6';
+import { AiOutlineProduct } from "react-icons/ai";
+import { CiBoxList } from "react-icons/ci";
 import { MdOutlineAddCircleOutline } from 'react-icons/md';
 
 const Sidebar = () => {
 	const navBar =[
 		{
-			label:'محصول'
+			label:'محصول',
+			icon:<AiOutlineProduct />,
+			subMenu:[
+				{
+					label : 'لیست محصولات',
+					icon : <CiBoxList />
+				}
+			]
 		}
 	]
 	// const navbar = [
