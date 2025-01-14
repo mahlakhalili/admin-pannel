@@ -45,22 +45,28 @@ const Sidebar = () => {
 				<div className="h-full w-full px-3 py-4 overflow-y-auto bg-gray-50">
 					<ul className="space-y-2 font-medium">
 						{navbar.map((nav, index) => (
-							<li key={index}>
-								<NavLink
-									to={nav.link}
-									className="flex  items-center p-2 text-gray-700 rounded-lg hover:bg-gray-100 group "
-								>
-									<Icon
-										size={20}
-										color="text-gray-600 group-hover:text-gray-900"
-									>
-										{nav.icon}
-									</Icon>
-									<span className="ms-3 text-xl group-hover:text-gray-900">
-										{nav.text}
-									</span>
-								</NavLink>
-							</li>
+							<NavBarItem
+								key={index}
+								label={nav.label}
+								icon={nav.icon}
+								subMenu={nav.subMenu}
+							/>
+							// <li key={index}>
+							// 	<NavLink
+							// 		to={nav.link}
+							// 		className="flex  items-center p-2 text-gray-700 rounded-lg hover:bg-gray-100 group "
+							// 	>
+							// 		<Icon
+							// 			size={20}
+							// 			color="text-gray-600 group-hover:text-gray-900"
+							// 		>
+							// 			{nav.icon}
+							// 		</Icon>
+							// 		<span className="ms-3 text-xl group-hover:text-gray-900">
+							// 			{nav.text}
+							// 		</span>
+							// 	</NavLink>
+							// </li>
 						))}
 					</ul>
 				</div>
@@ -68,7 +74,7 @@ const Sidebar = () => {
 		</div>
 	);
 };
-const navBarItem = ({ label, icon, subMenu }) => {
+const NavBarItem = ({ label, icon, subMenu }) => {
 	return (
 		<li>
 			<button>
