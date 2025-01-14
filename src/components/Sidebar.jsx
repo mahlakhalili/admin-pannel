@@ -71,7 +71,13 @@ const Sidebar = () => {
 const navBarItem = ({ label, icon, subMenu }) => {
 	return (
 		<li>
-			<Button />
+			<button>
+				<span>{label}</span>
+				<Icon
+					size={16}
+					color="text-gray-500"
+				/>
+			</button>
 			<ul>
 				{subMenu.map((subMenu, index) => (
 					<li key={index}>
