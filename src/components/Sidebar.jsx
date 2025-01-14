@@ -72,11 +72,8 @@ const navBarItem = ({ label, icon, subMenu }) => {
 	return (
 		<li>
 			<button>
+				<Icon>{icon}</Icon>
 				<span>{label}</span>
-				<Icon
-					size={16}
-					color="text-gray-500"
-				/>
 			</button>
 			<ul>
 				{subMenu.map((subMenu, index) => (
