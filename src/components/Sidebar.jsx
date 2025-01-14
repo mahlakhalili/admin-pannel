@@ -95,7 +95,7 @@ const Sidebar = () => {
 const NavBarItem = ({ label, icon, subMenu }) => {
 	return (
 		<li>
-			<button className='flex gap-1'>
+			<button className="flex items-center gap-1 w-full p-2 text-gray-900 rounded-lg hover:bg-gray-200">
 				<Icon>{icon}</Icon>
 				<span>{label}</span>
 			</button>
