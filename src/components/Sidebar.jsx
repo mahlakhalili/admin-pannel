@@ -129,8 +129,15 @@ const NavBarItem = ({ label, icon, subMenu }) => {
 	);
 };
 NavBarItem.propTypes = {
-	label: PropTypes.string,
-	icon: PropTypes.string,
+	label: PropTypes.string.isRequired,
+	icon: PropTypes.node.isRequired,
+	subMenu:
+		PropTypes.arrayOf[
+			PropTypes.shape({
+				label: PropTypes.string.isRequired,
+				href: PropTypes.string.isRequired,
+			})
+		],
 };
 
 export default Sidebar;
