@@ -7,7 +7,7 @@ import Input from '../Input';
 import Button from '../Button';
 import Modal from '../Modal';
 import Select from '../Select';
-import { statusList } from '../values';
+import { statusList } from '../../values';
 
 const ProductForm = ({
 	mode = 'ADD',
