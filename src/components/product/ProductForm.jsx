@@ -110,11 +110,11 @@ const ProductForm = ({
 				</div>
 				<div>
 					<div className="card">
-						{/* <Select
+						<Select
 							name='status'
 							label ='وضعیت'
 							options={statusList}
-						/> */}
+						/>
 					</div>
 				</div>
 				<div className="btn  flex justify-center items-center gap-4 col-span-2 mt-4 text-lg">
