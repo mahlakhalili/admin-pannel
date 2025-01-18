@@ -47,7 +47,7 @@ const ProductForm = ({
 		<FormProvider {...formMethods}>
 			<form className="form grid grid-cols-[2fr_1fr] gap-4">
 				<div>
-					<div>
+					<div className="card">
 						<Input
 							name="title"
 							label="عنوان"
