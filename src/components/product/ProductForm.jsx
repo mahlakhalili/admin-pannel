@@ -80,63 +80,34 @@ const ProductForm = ({
 							type="number"
 						/>
 					</div>
-				</div>
-				<div></div>
-				{/* <Input
-					name="title"
-					label="عنوان"
-					rules={{
-						required: 'عنوان را وارد کنید',
-					}}
-					className="col-span-3"
-				/>
-				<Input
-					mode="TEXTAREA"
-					name="description"
-					label="توضیحات"
-					className="col-span-3"
-				/> */}
-				{/* <Input
-					name="price"
-					label="قیمت"
-					type="currency"
-				/>
-				<Input
-					name="discount"
-					label="درصد تخفیف"
-					type="number"
-				/>
-				<Input
-					name="count"
-					label="تعداد"
-					type="number"
-				/> */}
-				<div className="grid grid-cols-4 gap-4 col-span-3">
-					{watch('images').map((img, index) => (
+					<div className="grid grid-cols-4 gap-4 col-span-3">
+						{watch('images').map((img, index) => (
+							<div
+								key={index}
+								className="flex items-center justify-center aspect-square border rounded-lg"
+							>
+								<img
+									src={img}
+									alt="photo"
+								/>
+							</div>
+						))}
 						<div
-							key={index}
-							className="flex items-center justify-center aspect-square border rounded-lg"
+							className={classNames({
+								'flex flex-col items-center justify-center h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50   hover:bg-gray-100 pt-5 pb-6 text-gray-500': true,
+								'col-span-4': watch('images').length === 0,
+							})}
+							onClick={() => setModalDisplay(true)}
 						>
-							<img
-								src={img}
-								alt="photo"
-							/>
+							<BsCloudUpload size={30} />
+							<p className="mb-2 text-sm  dark:text-gray-400">Click to upload</p>
+							<p className="text-xs  dark:text-gray-400">
+								SVG, PNG, JPG or GIF (MAX. 800x400px)
+							</p>
 						</div>
-					))}
-					<div
-						className={classNames({
-							'flex flex-col items-center justify-center h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50   hover:bg-gray-100 pt-5 pb-6 text-gray-500': true,
-							'col-span-4': watch('images').length === 0,
-						})}
-						onClick={() => setModalDisplay(true)}
-					>
-						<BsCloudUpload size={30} />
-						<p className="mb-2 text-sm  dark:text-gray-400">Click to upload</p>
-						<p className="text-xs  dark:text-gray-400">
-							SVG, PNG, JPG or GIF (MAX. 800x400px)
-						</p>
 					</div>
 				</div>
+				<div></div>
 
 				{/* <Input
 					name="img"
