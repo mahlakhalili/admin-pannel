@@ -48,7 +48,7 @@ Select.propTypes = {
 			value: PropTypes.string.isRequired,
 			label: PropTypes.string.isRequired,
 		})
-	),
+	).isRequired,
 	label: PropTypes.string,
 	name: PropTypes.string.isRequired,
 	defaultValue: PropTypes.string,
