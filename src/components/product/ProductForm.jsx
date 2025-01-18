@@ -45,8 +45,44 @@ const ProductForm = ({
 
 	return (
 		<FormProvider {...formMethods}>
-			<form className="form grid grid-cols-3 gap-4">
-				<Input
+			<form className="form grid grid-cols-[2fr_1fr] gap-4">
+				<div>
+					<div>
+						<Input
+							name="title"
+							label="عنوان"
+							rules={{
+								required: 'عنوان را وارد کنید',
+							}}
+							className="col-span-3"
+						/>
+						<Input
+							mode="TEXTAREA"
+							name="description"
+							label="توضیحات"
+							className="col-span-3"
+						/>
+					</div>
+					<div>
+						<Input
+							name="price"
+							label="قیمت"
+							type="currency"
+						/>
+						<Input
+							name="discount"
+							label="درصد تخفیف"
+							type="number"
+						/>
+						<Input
+							name="count"
+							label="تعداد"
+							type="number"
+						/>
+					</div>
+				</div>
+				<div></div>
+				{/* <Input
 					name="title"
 					label="عنوان"
 					rules={{
@@ -59,8 +95,8 @@ const ProductForm = ({
 					name="description"
 					label="توضیحات"
 					className="col-span-3"
-				/>
-				<Input
+				/> */}
+				{/* <Input
 					name="price"
 					label="قیمت"
 					type="currency"
@@ -74,7 +110,7 @@ const ProductForm = ({
 					name="count"
 					label="تعداد"
 					type="number"
-				/>
+				/> */}
 				<div className="grid grid-cols-4 gap-4 col-span-3">
 					{watch('images').map((img, index) => (
 						<div
