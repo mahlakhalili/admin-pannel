@@ -42,5 +42,19 @@ const Select = (
 		</div>
 	);
 };
+Select.propTypes = {
+	options: PropTypes.arrayOf(
+		PropTypes.shape({
+			value: PropTypes.string.isRequired,
+			label: PropTypes.string.isRequired,
+		})
+	),
+	label: PropTypes.string,
+	name: PropTypes.string.isRequired,
+	defaultValue: PropTypes.string,
+	rules: PropTypes.object,
+	className: PropTypes.string,
+	onChange: PropTypes.func,
+};
 
 export default Select;
