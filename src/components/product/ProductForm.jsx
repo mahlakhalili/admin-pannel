@@ -108,15 +108,6 @@ const ProductForm = ({
 					</div>
 				</div>
 				<div></div>
-
-				{/* <Input
-					name="img"
-					label="آپلود عکس"
-					type="file"
-					onChange={(_, e) => {
-						formMethods.setValue(image, e.target.files[0]);
-					}}
-				/> */}
 				<div className="btn  flex justify-center items-center gap-4 col-span-3 mt-4 text-lg">
 					<Button
 						text="انصراف"
@@ -149,6 +140,16 @@ const ProductForm = ({
 						</>
 					)}
 				</div>
+
+				{/* <Input
+					name="img"
+					label="آپلود عکس"
+					type="file"
+					onChange={(_, e) => {
+						formMethods.setValue(image, e.target.files[0]);
+					}}
+				/> */}
+
 				{modalDisplay && (
 					<ChooseImgModal
 						onAddImg={(image) => {
