@@ -8,7 +8,7 @@ import { MdEdit } from 'react-icons/md';
 import { MdDelete } from 'react-icons/md';
 import { numberToCurrency } from '../helpers/Number';
 import { Link } from 'react-router-dom';
-import { statusList } from '../../values';
+import { statusList } from '../values';
 const ProductList = () => {
 	const { data: products, isLoading } = useGetProductList();
 	if (isLoading) return <ListSkeleton />;
