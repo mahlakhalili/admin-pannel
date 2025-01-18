@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import { useController, useFormContext } from 'react-hook-form';
 const Select = (
 	label,
-	placeholder = '',
 	name = '',
 	defaultValue = '',
 	className = '',
@@ -20,13 +19,19 @@ const Select = (
 	return (
 		<div className={`form-input ${className}`}>
 			<label>{label}</label>
-			<select>
+			<select
+				{...field}
+				onChange={(e) => {
+					onChange(e.target.value, e);
+					if (field) return field.onChange(e);
+				}}
+			>
 				{options.map((option, index) => (
 					<option
 						key={index}
 						value={option.value}
 					>
-						{label}
+						{option.label}
 					</option>
 				))}
 			</select>
