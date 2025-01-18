@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { useController, useFormContext } from 'react-hook-form';
 const Select = (
 	label,
+	placeholder = 'لطفا یک مورد را انتخاب کنید.',
 	name = '',
 	defaultValue = '',
 	className = '',
@@ -26,10 +27,18 @@ const Select = (
 					if (field) return field.onChange(e);
 				}}
 			>
+				<option
+					value=""
+					className="text-gray-400"
+					disabled
+				>
+					{placeholder}
+				</option>
 				{options.map((option, index) => (
 					<option
 						key={index}
 						value={option.value}
+						className="text-gray-900"
 					>
 						{option.label}
 					</option>
@@ -49,6 +58,7 @@ Select.propTypes = {
 			label: PropTypes.string.isRequired,
 		})
 	).isRequired,
+	placeholder: PropTypes.string,
 	label: PropTypes.string,
 	name: PropTypes.string.isRequired,
 	defaultValue: PropTypes.string,
