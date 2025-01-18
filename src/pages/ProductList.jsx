@@ -8,6 +8,7 @@ import { MdEdit } from 'react-icons/md';
 import { MdDelete } from 'react-icons/md';
 import { numberToCurrency } from '../helpers/Number';
 import { Link } from 'react-router-dom';
+import { statusList } from '../../values';
 const ProductList = () => {
 	const { data: products, isLoading } = useGetProductList();
 	if (isLoading) return <ListSkeleton />;
@@ -39,6 +40,7 @@ const ProductList = () => {
 								<th>قیمت</th>
 								<th>تخفیف</th>
 								<th>تعداد</th>
+								<th>وضعیت</th>
 								<th className="row">عملیات</th>
 							</tr>
 						</thead>
@@ -63,7 +65,7 @@ const ProductList = () => {
 	);
 };
 
-const TableRow = ({ row, id, title, price, discount, count }) => {
+const TableRow = ({ row, id, title, price, discount, count, status }) => {
 	const deleteProduct = useDeleteProduct({});
 	return (
 		<tr key={id}>
@@ -72,6 +74,8 @@ const TableRow = ({ row, id, title, price, discount, count }) => {
 			<td>{numberToCurrency(+price)}تومان</td>
 			<td>{discount || 0}</td>
 			<td>{count}</td>
+			<td>{status === 'active' ? 'فعال' : 'غیرفعال'}</td>
+			<td>{statusList.find((st) => st.value === status)?.label}</td>
 			<td>
 				<div className="btns flex items-center gap-4">
 					<Button
@@ -80,7 +84,7 @@ const TableRow = ({ row, id, title, price, discount, count }) => {
 						to={`/product/edit/${id}`}
 					/>
 					<Button
-						icon={<MdDelete size={18}/>}
+						icon={<MdDelete size={18} />}
 						color="red"
 						loading={deleteProduct.isPending}
 						onClick={() => {
@@ -99,5 +103,6 @@ TableRow.propTypes = {
 	price: PropTypes.string,
 	discount: PropTypes.string,
 	count: PropTypes.string,
+	status: PropTypes.string,
 };
 export default ProductList;
