@@ -6,6 +6,7 @@ const Select = (
 	name = '',
 	defaultValue = '',
 	className = '',
+	options = [],
 	rules = {},
 	onChange = () => {}
 ) => {
@@ -19,7 +20,16 @@ const Select = (
 	return (
 		<div className={`form-input ${className}`}>
 			<label>{label}</label>
-			<select></select>
+			<select>
+				{options.map((option, index) => (
+					<option
+						key={index}
+						value={option.value}
+					>
+						{label}
+					</option>
+				))}
+			</select>
 
 			{fieldState?.error && (
 				<span className="text-red-600 text-sm">{fieldState.error.message}</span>
