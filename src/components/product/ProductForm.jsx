@@ -54,16 +54,14 @@ const ProductForm = ({
 							rules={{
 								required: 'عنوان را وارد کنید',
 							}}
-							className="col-span-3"
 						/>
 						<Input
 							mode="TEXTAREA"
 							name="description"
 							label="توضیحات"
-							className="col-span-3"
 						/>
 					</div>
-					<div className="card">
+					<div className="card grid-cols-2">
 						<Input
 							name="price"
 							label="قیمت"
