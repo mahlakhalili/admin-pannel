@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
 import { useController, useFormContext } from 'react-hook-form';
 const Select = (
-	label,
+	{label,
 	placeholder = 'لطفا یک مورد را انتخاب کنید.',
 	name = '',
 	defaultValue = '',
 	className = '',
 	options = [],
 	rules = {},
-	onChange = () => {}
+	onChange = () => {}}
 ) => {
 	const { control } = useFormContext();
 	const { field, fieldState } = useController({
