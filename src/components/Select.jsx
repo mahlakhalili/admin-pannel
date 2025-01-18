@@ -19,20 +19,7 @@ const Select = (
 	return (
 		<div className={`form-input ${className}`}>
 			<label>{label}</label>
-			<Tag
-				{...field}
-				type={type === 'currency' ? 'number' : type}
-				placeholder={placeholder}
-				onChange={(e) => {
-					onChange(e.target.value, e);
-					if (field) return field.onChange(e);
-				}}
-			/>
-			{type === 'currency' && (
-				<span className="text-end text-gray-700 text-xs">
-					{numberToCurrency(+watch(name))} تومان
-				</span>
-			)}
+			<select></select>
 
 			{fieldState?.error && (
 				<span className="text-red-600 text-sm">{fieldState.error.message}</span>
