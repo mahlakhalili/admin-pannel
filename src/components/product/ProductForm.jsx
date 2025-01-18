@@ -7,6 +7,7 @@ import Input from '../Input';
 import Button from '../Button';
 import Modal from '../Modal';
 import Select from '../Select';
+import { statusList } from '../../values';
 
 const ProductForm = ({
 	mode = 'ADD',
@@ -27,6 +28,7 @@ const ProductForm = ({
 			discount: data.discount ?? '',
 			count: data.count ?? '',
 			images: data.images ?? [],
+			status: data.status ?? '',
 			// img: data.img ?? '',
 			// image: data.image ?? '',
 		},
@@ -108,13 +110,11 @@ const ProductForm = ({
 				</div>
 				<div>
 					<div className="card">
-						<Select
-							name="product"
-							options={[
-								{ value: 'active', label: 'فعال' },
-								{ value: 'inactive', label: 'غیرفعال' },
-							]}
-						/>
+						{/* <Select
+							name='status'
+							label ='وضعیت'
+							options={statusList}
+						/> */}
 					</div>
 				</div>
 				<div className="btn  flex justify-center items-center gap-4 col-span-2 mt-4 text-lg">
