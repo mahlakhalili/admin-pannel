@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import Input from '../Input';
 import Button from '../Button';
 import Modal from '../Modal';
+import Select from '../Select';
 
 const ProductForm = ({
 	mode = 'ADD',
@@ -105,7 +106,17 @@ const ProductForm = ({
 						</div>
 					</div>
 				</div>
-				<div></div>
+				<div>
+					<div className="card">
+						<Select
+							name="product"
+							options={[
+								{ value: 'active', label: 'فعال' },
+								{ value: 'inactive', label: 'غیرفعال' },
+							]}
+						/>
+					</div>
+				</div>
 				<div className="btn  flex justify-center items-center gap-4 col-span-2 mt-4 text-lg">
 					<Button
 						text="انصراف"
