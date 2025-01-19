@@ -45,7 +45,7 @@ const CategoryForm = ({
 					<Button
 						text="انصراف"
 						color="outline-red"
-						to="/product/list"
+						to="/category/list"
 					/>
 					{mode === 'ADD' && (
 						<Button
