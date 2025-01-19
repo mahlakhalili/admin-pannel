@@ -26,7 +26,7 @@ const CategoryForm = ({
 	};
 	return (
 		<FormProvider {...formMethods}>
-			<form className="form ">
+			<form className="form grid grid-cols-[2fr_1fr] gap-4 ">
 				<div className="card">
 					<Input
 						name="title"
@@ -41,7 +41,7 @@ const CategoryForm = ({
 						label="توضیحات"
 					/>
 				</div>
-				<div className="btn  flex justify-center items-center gap-4 col-span-2 mt-4 text-lg">
+				<div className="btn  flex justify-center items-center gap-4  mt-4 text-lg">
 					<Button
 						text="انصراف"
 						color="outline-red"
