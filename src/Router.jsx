@@ -1,8 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from './App';
-import ProductList from './pages/ProductList';
-import AddProduct from './pages/AddProduct';
-import EditProduct from './pages/EditProduct';
+import ProductList from './pages/product/ProductList';
+import AddProduct from './pages/product/AddProduct';
+import EditProduct from './pages/product/EditProduct';
 const Router = createBrowserRouter([
 	{
 		path: '/',
