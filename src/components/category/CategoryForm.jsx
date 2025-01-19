@@ -41,6 +41,38 @@ const CategoryForm = ({
 						label="توضیحات"
 					/>
 				</div>
+				<div className="btn  flex justify-center items-center gap-4 col-span-2 mt-4 text-lg">
+					<Button
+						text="انصراف"
+						color="outline-red"
+						to="/product/list"
+					/>
+					{mode === 'ADD' && (
+						<Button
+							color="blue"
+							type="submit"
+							text="ذخیره"
+							loading={isAdding}
+							onClick={handleSubmit(onSubmit)}
+						/>
+					)}
+					{mode === 'EDIT' && (
+						<>
+							<Button
+								text="حذف"
+								color="red"
+								loading={isDeleting}
+								onClick={() => onDelete(data.id)}
+							/>
+							<Button
+								text="ویرایش"
+								color="green"
+								loading={isEditing}
+								onClick={handleSubmit(onSubmit)}
+							/>
+						</>
+					)}
+				</div>
 			</form>
 		</FormProvider>
 	);
