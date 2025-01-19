@@ -1,9 +1,13 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from './App';
+//product
 import ProductList from './pages/product/ProductList';
 import AddProduct from './pages/product/AddProduct';
 import EditProduct from './pages/product/EditProduct';
+//category
+import CategoryList from './pages/category/CategoryList';
 import AddCategory from './pages/category/AddCategory';
+
 const Router = createBrowserRouter([
 	{
 		path: '/',
@@ -20,6 +24,10 @@ const Router = createBrowserRouter([
 			{
 				path: '/product/edit/:productId',
 				element: <EditProduct />,
+			},
+			{
+				path: '/category/list',
+				element: <CategoryList />,
 			},
 			{
 				path: '/category/add',
