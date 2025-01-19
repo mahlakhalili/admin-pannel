@@ -26,7 +26,7 @@ const CategoryForm = ({
 	};
 	return (
 		<FormProvider {...formMethods}>
-			<form className="form grid grid-cols-[2fr_1fr] gap-4 ">
+			<form className="form grid gap-4 ">
 				<div className="card">
 					<Input
 						name="title"
