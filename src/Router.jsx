@@ -22,7 +22,7 @@ const Router = createBrowserRouter([
 				element: <EditProduct />,
 			},
 			{
-				path: '/product/add/category',
+				path: '/category/add',
 				element: <AddCategory />,
 			},
 		],
