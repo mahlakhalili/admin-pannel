@@ -35,7 +35,7 @@ const Router = createBrowserRouter([
 				element: <AddCategory />,
 			},
 			{
-				path: '/category/edit',
+				path: '/category/edit/:categoryId',
 				element: <EditCategory />,
 			},
 		],
