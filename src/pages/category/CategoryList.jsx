@@ -55,7 +55,7 @@ const CategoryList = () => {
 	);
 };
 const TableRow = ({ row, id, title }) => {
-	const deleteProduct = useDeleteCategory({});
+	const deleteCategory = useDeleteCategory({});
 	return (
 		<tr key={id}>
 			<td>{row}</td>
@@ -70,9 +70,9 @@ const TableRow = ({ row, id, title }) => {
 					<Button
 						icon={<MdDelete size={18} />}
 						color="red"
-						loading={deleteProduct.isPending}
+						loading={deleteCategory.isPending}
 						onClick={() => {
-							deleteProduct.mutate(id);
+							deleteCategory.mutate(id);
 						}}
 					/>
 				</div>
