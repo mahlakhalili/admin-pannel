@@ -1,5 +1,6 @@
 import useEditCategory from '../../hooks/apis/category/useEditCategory';
 import useGetCategory from '../../hooks/apis/category/useGetCategory';
+import useDeleteCategory from '../../hooks/apis/category/useDeleteCategory';
 import CategoryForm from '../../components/category/CategoryForm';
 import FormSkeleton from '../../skeleton/FormSkeleton';
 import { useNavigate } from 'react-router-dom';
@@ -12,6 +13,9 @@ const EditCategory = () => {
 	const EditCategory = useEditCategory({
 		onEdit: () => navigate('/category/list'),
 	});
+	const deleteCategory = useDeleteCategory({
+		onDelete: () => navigate('/product/list'),
+	});
 	if (isLoading) return <FormSkeleton />;
 	return (
 		<div className="grid gap-4">
@@ -22,6 +26,10 @@ const EditCategory = () => {
 				isEditing={EditCategory.isPending}
 				onEdit={(formData) => {
 					EditCategory.mutate(formData);
+				}}
+				isDeleting={deleteCategory.isPending}
+				onDelete={(id) => {
+					deleteCategory.mutate(id);
 				}}
 			/>
 		</div>
