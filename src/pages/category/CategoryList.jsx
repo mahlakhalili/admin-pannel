@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { MdEdit } from 'react-icons/md';
 import { MdDelete } from 'react-icons/md';
 const CategoryList = () => {
+	const { data: categories, isLoading } = useGetCategoryList();
 	return (
 		<div className="page">
 			<div className="flex items-center justify-between">
@@ -18,6 +19,12 @@ const CategoryList = () => {
 					افزودن دسته بندی
 				</Link>
 			</div>
+			{categories?.length === 0 && (
+				<EmptyBox
+					title="هیچ دسته بندی وجود ندارد."
+					text="لطفا یک دسته بندی به لیست دسته بندی اضافه کنید."
+				/>
+			)}
 		</div>
 	);
 };
