@@ -1,4 +1,5 @@
 import useGetCategoryList from '../../hooks/apis/category/useGetCategoryList';
+import useDeleteCategory from '../../hooks/apis/category/useDeleteCategory';
 import ListSkeleton from '../../skeleton/ListSkeleton';
 import PropTypes from 'prop-types';
 import Button from '../../components/Button';
@@ -54,6 +55,7 @@ const CategoryList = () => {
 	);
 };
 const TableRow = ({ row, id, title }) => {
+	const deleteProduct = useDeleteCategory({});
 	return (
 		<tr key={id}>
 			<td>{row}</td>
@@ -68,10 +70,10 @@ const TableRow = ({ row, id, title }) => {
 					<Button
 						icon={<MdDelete size={18} />}
 						color="red"
-						// loading={deleteProduct.isPending}
-						// onClick={() => {
-						// 	deleteProduct.mutate(id);
-						// }}
+						loading={deleteProduct.isPending}
+						onClick={() => {
+							deleteProduct.mutate(id);
+						}}
 					/>
 				</div>
 			</td>
