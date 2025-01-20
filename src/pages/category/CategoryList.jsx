@@ -8,6 +8,7 @@ import { MdEdit } from 'react-icons/md';
 import { MdDelete } from 'react-icons/md';
 const CategoryList = () => {
 	const { data: categories, isLoading } = useGetCategoryList();
+	if (isLoading) return <ListSkeleton />;
 	return (
 		<div className="page">
 			<div className="flex items-center justify-between">
@@ -62,7 +63,7 @@ const TableRow = ({ row, id, title }) => {
 					<Button
 						icon={<MdEdit size={18} />}
 						color="green"
-						to={`/product/edit/${id}`}
+						to={`/category/edit/${id}`}
 					/>
 					<Button
 						icon={<MdDelete size={18} />}
