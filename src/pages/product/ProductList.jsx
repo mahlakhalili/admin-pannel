@@ -26,7 +26,7 @@ const ProductList = () => {
 			</div>
 			{products?.length === 0 && (
 				<EmptyBox
-					title="هیچ عنوانی وجود ندارد."
+					title="هیچ محصولی وجود ندارد."
 					text="لطفا یک محصول به لیست محصولات اضافه کنید."
 				/>
 			)}
