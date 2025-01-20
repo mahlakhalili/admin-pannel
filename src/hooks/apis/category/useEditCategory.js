@@ -11,7 +11,7 @@ const useEditCategory = ({ onEdit = () => {} }) => {
 				queryKey: ['category'],
 			});
 			onEdit();
-			toast.success('محصول با موفقیت ویرایش شد');
+			toast.success('دسته بندی با موفقیت ویرایش شد');
 		},
 	});
 };
