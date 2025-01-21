@@ -9,6 +9,7 @@ import Modal from '../Modal';
 import Select from '../Select';
 import { statusList } from '../../values';
 import useGetCategoryList from '../../hooks/apis/category/useGetCategoryList';
+import { InputSkeleton } from '../../skeleton/FormSkeleton';
 
 const ProductForm = ({
 	mode = 'ADD',
@@ -119,21 +120,24 @@ const ProductForm = ({
 						/>
 					</div>
 					<div className="card">
-						<Select
-							name="category"
-							label="دسته بندی"
-							options={(() => {
-								const output = [];
-								if (categoryList)
-									for (const category of categoryList) {
-										output.push({
-											label: category.title,
-											value: category.id,
-										});
-									}
-								return output;
-							})()}
-						/>
+						{isCategoriesLosding ? (
+							<InputSkeleton />
+						) : (
+							<Select
+								name="category"
+								label="دسته بندی"
+								options={(() => {
+									const output = [];
+										for (const category of categoryList) {
+											output.push({
+												label: category.title,
+												value: category.id,
+											});
+										}
+									return output;
+								})()}
+							/>
+						)}
 					</div>
 				</div>
 				<div className="btn  flex justify-center items-center gap-4 col-span-2 mt-4 text-lg">
