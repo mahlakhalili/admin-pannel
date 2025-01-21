@@ -124,12 +124,13 @@ const ProductForm = ({
 							label="دسته بندی"
 							options={(() => {
 								const output = [];
-								for (const category of categoryList) {
-									output.push({
-										label: category.title,
-										value: category.id,
-									});
-								}
+								if (categoryList)
+									for (const category of categoryList) {
+										output.push({
+											label: category.title,
+											value: category.id,
+										});
+									}
 								return output;
 							})()}
 						/>
