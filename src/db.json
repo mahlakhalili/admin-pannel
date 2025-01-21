@@ -1,14 +1,6 @@
 {
   "product": [
     {
-      "id": "fc34",
-      "title": "goshi",
-      "description": "sumsung",
-      "price": "120000000",
-      "discount": "4",
-      "count": "10"
-    },
-    {
       "id": "6ea6",
       "title": "گوشی شیایومی",
       "description": "گوشی شیاعومی با کیفیت بالا",
@@ -16,37 +8,28 @@
       "discount": "40",
       "count": "4",
       "images": []
-    },
-    {
-      "id": "929c",
-      "title": "لپتاپ lenova",
-      "description": "لپتاپ lenova",
-      "price": "35000000",
-      "discount": "20",
-      "count": "4",
-      "images": []
     }
   ],
   "category": [
     {
-      "id": "8af9",
-      "title": "تجهیزات ",
-      "description": "تجهیزات دیجیتال"
+      "id": "f7d7",
+      "title": "لوازم الکترونیکی",
+      "description": "لوازم الکترونیکی"
     },
     {
-      "id": "8af9",
-      "title": "تجهیزات ",
-      "description": "تجهیزات دیجیتال"
+      "id": "4907",
+      "title": "لوازم خانگی",
+      "description": "لوازم خانگی"
     },
     {
-      "id": "8af9",
-      "title": "تجهیزات ",
-      "description": "تجهیزات دیجیتال"
+      "id": "2d71",
+      "title": "موبایل",
+      "description": "موبایل"
     },
     {
-      "id": "8af9",
-      "title": "تجهیزات ",
-      "description": "تجهیزات دیجیتال"
+      "id": "cbd3",
+      "title": "لپ تاپ",
+      "description": "لپ تاپ"
     }
   ]
 }
