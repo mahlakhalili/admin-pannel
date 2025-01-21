@@ -143,6 +143,7 @@ const ProductForm = ({
 							<Button
 								text="ویرایش"
 								color="green"
+								type="submit"
 								loading={isEditing}
 								onClick={handleSubmit(onSubmit)}
 							/>
