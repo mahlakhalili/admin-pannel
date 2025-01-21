@@ -130,6 +130,7 @@ const ProductForm = ({
 										value: category.id,
 									});
 								}
+								return output;
 							})()}
 						/>
 					</div>
