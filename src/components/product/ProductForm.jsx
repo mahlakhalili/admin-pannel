@@ -8,6 +8,7 @@ import Button from '../Button';
 import Modal from '../Modal';
 import Select from '../Select';
 import { statusList } from '../../values';
+import useGetCategoryList from '../../hooks/apis/category/useGetCategoryList';
 
 const ProductForm = ({
 	mode = 'ADD',
@@ -45,6 +46,7 @@ const ProductForm = ({
 		if (mode === 'ADD') onAdd(formData);
 		else if (mode === 'EDIT') onEdit({ ...formData, id: data.id });
 	};
+	const { data: categoryList, isLoading: isCategoriesLosding } = useGetCategoryList();
 
 	return (
 		<FormProvider {...formMethods}>
@@ -111,9 +113,24 @@ const ProductForm = ({
 				<div>
 					<div className="card">
 						<Select
-							name='status'
-							label ='وضعیت'
+							name="status"
+							label="وضعیت"
 							options={statusList}
+						/>
+					</div>
+					<div className="card">
+						<Select
+							name="category"
+							label="دسته بندی"
+							options={(() => {
+								const output = [];
+								for (const category of categoryList) {
+									output.push({
+										label: category.title,
+										value: category.id,
+									});
+								}
+							})()}
 						/>
 					</div>
 				</div>
