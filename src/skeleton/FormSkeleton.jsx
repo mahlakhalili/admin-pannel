@@ -18,7 +18,7 @@ const FormSkeleton = () => {
 	);
 };
 
-const InputSkeleton = ({ className = '' }) => {
+export const InputSkeleton = ({ className = '' }) => {
 	return (
 		<div className={`grid gap-2 ${className}`}>
 			<div className="skeleton h-3 w-20"></div>
