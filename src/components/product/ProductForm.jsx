@@ -31,6 +31,7 @@ const ProductForm = ({
 			count: data.count ?? '',
 			images: data.images ?? [],
 			status: data.status ?? '',
+			category: data.category ?? ',',
 			// img: data.img ?? '',
 			// image: data.image ?? '',
 		},
@@ -111,7 +112,7 @@ const ProductForm = ({
 						</div>
 					</div>
 				</div>
-				<div className='grid gap-1 h-max'>
+				<div className="grid gap-1 h-max">
 					<div className="card">
 						<Select
 							name="status"
@@ -128,12 +129,12 @@ const ProductForm = ({
 								label="دسته بندی"
 								options={(() => {
 									const output = [];
-										for (const category of categoryList) {
-											output.push({
-												label: category.title,
-												value: category.id,
-											});
-										}
+									for (const category of categoryList) {
+										output.push({
+											label: category.title,
+											value: category.id,
+										});
+									}
 									return output;
 								})()}
 							/>
