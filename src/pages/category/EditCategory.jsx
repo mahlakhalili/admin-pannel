@@ -3,8 +3,7 @@ import useGetCategory from '../../hooks/apis/category/useGetCategory';
 import useDeleteCategory from '../../hooks/apis/category/useDeleteCategory';
 import CategoryForm from '../../components/category/CategoryForm';
 import FormSkeleton from '../../skeleton/FormSkeleton';
-import { useNavigate } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 const EditCategory = () => {
 	const { categoryId } = useParams();
@@ -14,7 +13,7 @@ const EditCategory = () => {
 		onEdit: () => navigate('/category/list'),
 	});
 	const deleteCategory = useDeleteCategory({
-		onDelete: () => navigate('/product/list'),
+		onDelete: () => navigate('/category/list'),
 	});
 	if (isLoading) return <FormSkeleton />;
 	return (
