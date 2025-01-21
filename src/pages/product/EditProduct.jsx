@@ -1,10 +1,9 @@
 import ProductForm from '../../components/product/ProductForm';
 import FormSkeleton from '../../skeleton/FormSkeleton';
-import { useNavigate } from 'react-router-dom';
 import useGetProduct from '../../hooks/apis/product/useGetProduct';
 import useEditProduct from '../../hooks/apis/product/useEditProduct';
 import useDeleteProduct from '../../hooks/apis/product/useDeleteProduct';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 const EditProduct = () => {
 	const productId = useParams();
