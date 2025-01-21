@@ -111,7 +111,7 @@ const ProductForm = ({
 						</div>
 					</div>
 				</div>
-				<div>
+				<div className='grid gap-1 h-max'>
 					<div className="card">
 						<Select
 							name="status"
