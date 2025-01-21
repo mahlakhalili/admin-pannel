@@ -1,5 +1,6 @@
 import useGetProductList from '../../hooks/apis/product/useGetProductList';
 import useDeleteProduct from '../../hooks/apis/product/useDeleteProduct';
+import useGetCategoryList from '../../hooks/apis/category/useGetCategoryList';
 import ListSkeleton from '../../skeleton/ListSkeleton';
 import PropTypes from 'prop-types';
 import EmptyBox from '../../components/EmptyBox';
@@ -10,8 +11,9 @@ import { numberToCurrency } from '../../helpers/Number';
 import { Link } from 'react-router-dom';
 import { statusList } from '../../values';
 const ProductList = () => {
-	const { data: products, isLoading } = useGetProductList();
-	if (isLoading) return <ListSkeleton />;
+	const { data: products, isLoading: isProductLoading } = useGetProductList();
+	const { data: categories, isLoading: isCategoriesLosding } = useGetCategoryList();
+	if (isProductLoading || isCategoriesLosding) return <ListSkeleton />;
 
 	return (
 		<div className="page">
@@ -37,6 +39,7 @@ const ProductList = () => {
 							<tr>
 								<th>ردیف</th>
 								<th>عنوان محصول</th>
+								<th>دسته بندی</th>
 								<th>قیمت</th>
 								<th>تخفیف</th>
 								<th>تعداد</th>
@@ -50,6 +53,7 @@ const ProductList = () => {
 									key={product.id}
 									row={index + 1}
 									// {...product}
+									categories={categories}
 									id={product.id}
 									title={product.title}
 									price={product.price}
@@ -65,12 +69,13 @@ const ProductList = () => {
 	);
 };
 
-const TableRow = ({ row, id, title, price, discount, count, status }) => {
+const TableRow = ({ row, id, title, price, discount, count, status, category, categories }) => {
 	const deleteProduct = useDeleteProduct({});
 	return (
 		<tr key={id}>
 			<td>{row}</td>
 			<td>{title}</td>
+			<td>{categories.find((cat) => cat.id === category)?.title}</td>
 			<td>{numberToCurrency(+price)}تومان</td>
 			<td>{discount || 0}</td>
 			<td>{count}</td>
@@ -104,5 +109,7 @@ TableRow.propTypes = {
 	discount: PropTypes.string,
 	count: PropTypes.string,
 	status: PropTypes.string,
+	category: PropTypes.string,
+	categories: PropTypes.array,
 };
 export default ProductList;
