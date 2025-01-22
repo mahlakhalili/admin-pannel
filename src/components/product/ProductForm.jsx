@@ -31,7 +31,7 @@ const ProductForm = ({
 			count: data.count ?? '',
 			images: data.images ?? [],
 			status: data.status ?? '',
-			category: data.category ?? ',',
+			category: data.category ?? '',
 			// img: data.img ?? '',
 			// image: data.image ?? '',
 		},
