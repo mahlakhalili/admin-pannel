@@ -35,7 +35,7 @@ const Button = ({
 				</Icon>
 			) : (
 				<div className="flex items-center justify-center gap-2">
-					{Icon && <Icon>{icon}</Icon>}
+					{icon && <Icon>{icon}</Icon>}
 					{text && <span>{text}</span>}
 				</div>
 			)}
