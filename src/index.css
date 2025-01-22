@@ -74,7 +74,7 @@
 		@apply w-1/12;
 	}
 	.table-wrapper table tbody tr {
-		@apply odd:bg-white  even:bg-gray-50 even:dark:bg-gray-800 border-b;
+		@apply odd:bg-white  even:bg-gray-50;
 	}
 	.table-wrapper table tbody tr td {
 		@apply px-6 py-4 text-gray-900;
