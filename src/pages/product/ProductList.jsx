@@ -59,6 +59,7 @@ const ProductList = () => {
 									price={product.price}
 									discount={product.discount}
 									count={product.count}
+									category={product.category}
 									status={product.status}
 								/>
 							))}
