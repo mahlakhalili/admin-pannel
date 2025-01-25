@@ -79,7 +79,7 @@ const TableRow = ({ row, id, title, price, discount, count, status, category, ca
 			<td>{numberToCurrency(+price)}تومان</td>
 			<td>{discount || 0}</td>
 			<td>{count}</td>
-			<td>{status === 'active' ? 'فعال' : 'غیرفعال'}</td>
+			{/* <td>{status === 'active' ? 'فعال' : 'غیرفعال'}</td> */}
 			<td>{statusList.find((st) => st.value === status)?.label}</td>
 			<td>
 				<div className="btns flex items-center gap-4">
