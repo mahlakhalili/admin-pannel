@@ -52,15 +52,15 @@ const ProductList = () => {
 								<TableRow
 									key={product.id}
 									row={index + 1}
-									// {...product}
+									{...product}
 									categories={categories}
-									id={product.id}
-									title={product.title}
-									price={product.price}
-									discount={product.discount}
-									count={product.count}
-									category={product.category}
-									status={product.status}
+									// id={product.id}
+									// title={product.title}
+									// price={product.price}
+									// discount={product.discount}
+									// count={product.count}
+									// category={product.category}
+									// status={product.status}
 								/>
 							))}
 						</tbody>
