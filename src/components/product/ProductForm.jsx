@@ -7,6 +7,7 @@ import Input from '../Input';
 import Button from '../Button';
 import Modal from '../Modal';
 import Select from '../Select';
+import Checkbox from '../Checkbox';
 import { statusList } from '../../values';
 import useGetCategoryList from '../../hooks/apis/category/useGetCategoryList';
 import { InputSkeleton } from '../../skeleton/FormSkeleton';
