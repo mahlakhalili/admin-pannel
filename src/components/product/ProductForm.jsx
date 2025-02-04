@@ -28,12 +28,13 @@ const ProductForm = ({
 			title: data.title ?? '',
 			description: data.description ?? '',
 			price: data.price ?? '',
+			discountCheckbox: data.discountCheckbox ?? false,
 			discount: data.discount ?? '',
 			count: data.count ?? '',
 			images: data.images ?? [],
 			status: data.status ?? '',
 			category: data.category ?? '',
-			discountCheckbox: data.discountCheckbox ?? '',
+			
 
 			// img: data.img ?? '',
 			// image: data.image ?? '',
