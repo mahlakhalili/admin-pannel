@@ -75,14 +75,16 @@ const ProductForm = ({
 							label="قیمت"
 							type="currency"
 						/>
-						<Input
-							name="discount"
-							label="درصد تخفیف"
-							type="number"
-						/>
+
 						<Input
 							name="count"
 							label="تعداد"
+							type="number"
+						/>
+						<Checkbox label='آیا محصول دارای تخفیف است؟' className='self-center' />
+						<Input
+							name="discount"
+							label="درصد تخفیف"
 							type="number"
 						/>
 					</div>
