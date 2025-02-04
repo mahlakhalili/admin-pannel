@@ -1,13 +1,12 @@
+import PropTypes from 'prop-types';
 import { useController, useFormContext } from 'react-hook-form';
 import classNames from 'classnames';
-import Input from './Input';
-const Checkbox = ({ label, name, defaultValue, rules, className = '', onChange = () => {} }) => {
-	const { control, watch } = useFormContext();
-	const { field, fieldState } = useController({
+const Checkbox = ({ label, name, defaultValue, className = '', onChange = () => {} }) => {
+	const { control } = useFormContext();
+	const { field } = useController({
 		control,
 		defaultValue,
 		name,
-		rules,
 	});
 	return (
 		<label
@@ -20,6 +19,7 @@ const Checkbox = ({ label, name, defaultValue, rules, className = '', onChange =
 				type="checkbox"
 				className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500  focus:ring-2 "
 				{...field}
+				checked={field.value}
 				onChange={(e) => {
 					const isChecked = e.currentTarget.checked;
 					onChange(isChecked);
@@ -29,6 +29,13 @@ const Checkbox = ({ label, name, defaultValue, rules, className = '', onChange =
 			<span className=" text-sm font-medium text-gray-900 ">{label}</span>
 		</label>
 	);
+};
+Checkbox.propTypes = {
+	label: PropTypes.string.isRequired,
+	name: PropTypes.string.isRequired,
+	defaultValue: PropTypes.bool,
+	className: PropTypes.string,
+	onChange: PropTypes.func,
 };
 
 export default Checkbox;
