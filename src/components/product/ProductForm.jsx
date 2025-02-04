@@ -33,6 +33,8 @@ const ProductForm = ({
 			images: data.images ?? [],
 			status: data.status ?? '',
 			category: data.category ?? '',
+			discountCheckbox: data.discountCheckbox ?? '',
+
 			// img: data.img ?? '',
 			// image: data.image ?? '',
 		},
@@ -81,7 +83,11 @@ const ProductForm = ({
 							label="تعداد"
 							type="number"
 						/>
-						<Checkbox label='آیا محصول دارای تخفیف است؟' className='self-center' />
+						<Checkbox
+							name="discountCheckbox"
+							label="آیا محصول دارای تخفیف است؟"
+							className="self-center"
+						/>
 						<Input
 							name="discount"
 							label="درصد تخفیف"
