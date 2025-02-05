@@ -16,6 +16,10 @@
 		@apply grid gap-2 h-max;
 	}
 
+	.form-input.disabled {
+		@apply opacity-50 cursor-auto;
+	}
+
 	.form-input label {
 		@apply font-normal block mb-2  text-xl text-gray-900;
 	}
@@ -33,6 +37,7 @@
 	.form-input select {
 		@apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 outline-none;
 	}
+
 	.btn {
 		@apply flex items-center justify-center shadow-sm outline-none focus:right-4 px-1 py-2;
 	}
