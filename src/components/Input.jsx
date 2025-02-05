@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { useController, useFormContext } from 'react-hook-form';
 import { numberToCurrency } from '../helpers/Number';
 const Input = ({
@@ -23,7 +24,13 @@ const Input = ({
 	});
 	const Tag = mode === 'INPUT' ? 'input' : 'textarea';
 	return (
-		<div className={`form-input ${className}`}>
+		<div
+			className={classNames({
+				'form-input': true,
+				[className]: className,
+				disabled: disabled,
+			})}
+		>
 			<label>{label}</label>
 			<Tag
 				{...field}
