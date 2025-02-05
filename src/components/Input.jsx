@@ -9,6 +9,7 @@ const Input = ({
 	defaultValue = '',
 	mode = 'INPUT',
 	className = '',
+	disabled = false,
 	rules = {},
 	onChange = () => {},
 }) => {
@@ -18,6 +19,7 @@ const Input = ({
 		defaultValue,
 		name,
 		rules,
+		disabled,
 	});
 	const Tag = mode === 'INPUT' ? 'input' : 'textarea';
 	return (
@@ -27,6 +29,7 @@ const Input = ({
 				{...field}
 				type={type === 'currency' ? 'number' : type}
 				placeholder={placeholder}
+				disabled={disabled}
 				onChange={(e) => {
 					onChange(e.target.value, e);
 					if (field) return field.onChange(e);
@@ -54,6 +57,7 @@ Input.propTypes = {
 	rules: PropTypes.object,
 	mode: PropTypes.oneOf(['INPUT', 'TEXTAREA']),
 	className: PropTypes.string,
-	onChange:PropTypes.func
+	onChange: PropTypes.func,
+	disabled: PropTypes.bool,
 };
 export default Input;
