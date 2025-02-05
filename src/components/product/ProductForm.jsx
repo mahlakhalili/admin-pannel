@@ -34,7 +34,6 @@ const ProductForm = ({
 			images: data.images ?? [],
 			status: data.status ?? '',
 			category: data.category ?? '',
-			
 
 			// img: data.img ?? '',
 			// image: data.image ?? '',
@@ -93,6 +92,7 @@ const ProductForm = ({
 							name="discount"
 							label="درصد تخفیف"
 							type="number"
+							disabled={!watch('discountCheckbox')}
 						/>
 					</div>
 					<div className="grid grid-cols-4 gap-4 col-span-3">
