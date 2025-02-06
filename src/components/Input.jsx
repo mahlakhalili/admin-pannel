@@ -29,6 +29,7 @@ const Input = ({
 				'form-input': true,
 				[className]: className,
 				disabled: disabled,
+				error: fieldState?.error,
 			})}
 		>
 			<label>{label}</label>
@@ -42,14 +43,13 @@ const Input = ({
 					if (field) return field.onChange(e);
 				}}
 			/>
+			{fieldState?.error && (
+				<span className="text-red-600 text-sm">{fieldState.error.message}</span>
+			)}
 			{type === 'currency' && (
 				<span className="text-end text-gray-700 text-xs">
 					{numberToCurrency(+watch(name))} تومان
 				</span>
-			)}
-
-			{fieldState?.error && (
-				<span className="text-red-600 text-sm">{fieldState.error.message}</span>
 			)}
 		</div>
 	);
