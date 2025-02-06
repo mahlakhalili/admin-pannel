@@ -42,7 +42,7 @@ const ProductForm = ({
 					.number()
 					.typeError('تعداد را وارد کنید.')
 					.required('تعداد را وارد کنید.')
-					.min(0, 'تعداد باید مثبت  باشد.'),
+					.min(0, 'تعداد باید مثبت و صفر باشد.'),
 			})
 		),
 		defaultValues: {
