@@ -53,7 +53,10 @@ const ProductForm = ({
 			description: formData.description,
 			price: formData.price,
 			count: formData.count,
-			image: formData.image,
+			images: formData.images,
+			discountCheckbox: formData.discountCheckbox,
+			status: formData.status,
+			category: formData.category,
 		};
 		// if (mode === 'ADD') onAdd(formData);
 		// else if (mode === 'EDIT') onEdit({ ...formData, id: data.id });
