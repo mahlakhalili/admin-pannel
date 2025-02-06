@@ -1,4 +1,6 @@
 import { FormProvider, useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
 import { useState } from 'react';
 import { BsCloudUpload } from 'react-icons/bs';
 import classNames from 'classnames';
@@ -15,15 +17,20 @@ import { InputSkeleton } from '../../skeleton/FormSkeleton';
 const ProductForm = ({
 	mode = 'ADD',
 	data = {},
-	onAdd = () => {},
+	// onAdd = () => {},
 	isAdding = false,
-	onEdit = () => {},
+	// onEdit = () => {},
 	isEditing = false,
 	onDelete = () => {},
 	isDeleting = false,
 }) => {
 	const [modalDisplay, setModalDisplay] = useState(false);
 	const formMethods = useForm({
+		resolver: yupResolver(
+			yup.object().shape({
+				title: yup.string().required().min(5)
+			})
+		),
 		defaultValues: {
 			title: data.title ?? '',
 			description: data.description ?? '',
@@ -76,10 +83,10 @@ const ProductForm = ({
 							label="عنوان"
 							rules={{
 								required: 'عنوان را وارد کنید',
-								minLength:{
-									value:5,
-									message : 'عنوان باید حداقل باید پنج کاراکتر باشد.'
-								}
+								minLength: {
+									value: 5,
+									message: 'عنوان باید حداقل باید پنج کاراکتر باشد.',
+								},
 							}}
 						/>
 						<Input
