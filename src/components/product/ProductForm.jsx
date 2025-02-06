@@ -58,6 +58,9 @@ const ProductForm = ({
 			status: formData.status,
 			category: formData.category,
 		};
+
+		if (formData.discountCheckbox) output.discount = formData.discount;
+
 		// if (mode === 'ADD') onAdd(formData);
 		// else if (mode === 'EDIT') onEdit({ ...formData, id: data.id });
 	};
