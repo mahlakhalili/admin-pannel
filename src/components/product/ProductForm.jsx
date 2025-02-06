@@ -76,6 +76,10 @@ const ProductForm = ({
 							label="عنوان"
 							rules={{
 								required: 'عنوان را وارد کنید',
+								minLength:{
+									value:5,
+									message : 'عنوان باید حداقل باید پنج کاراکتر باشد.'
+								}
 							}}
 						/>
 						<Input
