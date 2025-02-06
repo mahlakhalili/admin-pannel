@@ -28,7 +28,21 @@ const ProductForm = ({
 	const formMethods = useForm({
 		resolver: yupResolver(
 			yup.object().shape({
-				title: yup.string().required().min(5)
+				title: yup
+					.string()
+					.required('عنوان را وارد کنید.')
+					.min(5, 'عنوان باید حداقل 5 کاراکتر باشد.'),
+				description: yup.string().required('توضیحات را وارد کنید.'),
+				price: yup
+					.number()
+					.typeError('قیمت را وارد کنید.')
+					.required('قیمت را وارد کنید.')
+					.min(1, 'قیمت باید بیشتر از صفر باشد.'),
+				count: yup
+					.number()
+					.typeError('تعداد را وارد کنید.')
+					.required('تعداد را وارد کنید.')
+					.min(0, 'تعداد باید مثبت  باشد.'),
 			})
 		),
 		defaultValues: {
