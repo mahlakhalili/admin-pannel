@@ -48,8 +48,15 @@ const ProductForm = ({
 		// fd.append('discount', formData.discount);
 		// fd.append('count', formData.count);
 		// fd.append('image', formData.image);
-		if (mode === 'ADD') onAdd(formData);
-		else if (mode === 'EDIT') onEdit({ ...formData, id: data.id });
+		const output = {
+			title: formData.title,
+			description: formData.description,
+			price: formData.price,
+			count: formData.count,
+			image: formData.image,
+		};
+		// if (mode === 'ADD') onAdd(formData);
+		// else if (mode === 'EDIT') onEdit({ ...formData, id: data.id });
 	};
 	const { data: categoryList, isLoading: isCategoriesLosding } = useGetCategoryList();
 
@@ -87,6 +94,9 @@ const ProductForm = ({
 							name="discountCheckbox"
 							label="آیا محصول دارای تخفیف است؟"
 							className="self-center"
+							onChange={(value) => {
+								if (value === false) setValue('discount', '');
+							}}
 						/>
 						<Input
 							name="discount"
