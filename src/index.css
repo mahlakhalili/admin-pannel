@@ -19,6 +19,14 @@
 	.form-input.disabled {
 		@apply opacity-50 cursor-auto;
 	}
+	.form-input.error label {
+		@apply text-red-600;
+	}
+	.form-input.error input,
+	.form-input.error textarea,
+	.form-input.error select {
+		@apply border-red-600
+	}
 
 	.form-input label {
 		@apply font-normal block mb-2  text-xl text-gray-900;
