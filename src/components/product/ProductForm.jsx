@@ -33,6 +33,11 @@ const ProductForm = ({
 					.required('عنوان را وارد کنید.')
 					.min(5, 'عنوان باید حداقل 5 کاراکتر باشد.'),
 				description: yup.string().required('توضیحات را وارد کنید.'),
+				discount: yup
+					.number()
+					.typeError('درصد تخفیف را وارد کنید.')
+					.min(0, 'درصد تخفیف باید مثبت یا صفر باشد.')
+					.max(100, 'درصد تخفیف نمی تواند از 100 بیشتر باشد.'),
 				price: yup
 					.number()
 					.typeError('قیمت را وارد کنید.')
@@ -43,6 +48,8 @@ const ProductForm = ({
 					.typeError('تعداد را وارد کنید.')
 					.required('تعداد را وارد کنید.')
 					.min(0, 'تعداد باید مثبت و صفر باشد.'),
+				status: yup.string().required('وضعیت محصول را مشخص کنید.'),
+				category: yup.string().required('دسته بندی محصول را مشخص کنید.'),
 			})
 		),
 		defaultValues: {
