@@ -67,7 +67,7 @@ const ProductForm = ({
 			// image: data.image ?? '',
 		},
 	});
-	const { handleSubmit, setValue, getValues, watch } = formMethods;
+	const { handleSubmit, setValue, getValues, watch, clearErrors } = formMethods;
 	const onSubmit = (formData) => {
 		// const fd = new FormData();
 		// fd.append('title', formData.title);
@@ -133,7 +133,10 @@ const ProductForm = ({
 							label="آیا محصول دارای تخفیف است؟"
 							className="self-center"
 							onChange={(value) => {
-								if (value === false) setValue('discount', '');
+								if (value === false) {
+									setValue('discount', '');
+									clearErrors('discount');
+								}
 							}}
 						/>
 						<Input
