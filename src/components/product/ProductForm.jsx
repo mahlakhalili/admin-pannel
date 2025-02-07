@@ -31,7 +31,8 @@ const ProductForm = ({
 				title: yup
 					.string()
 					.required('عنوان را وارد کنید.')
-					.min(5, 'عنوان باید حداقل 5 کاراکتر باشد.'),
+					.min(5, 'عنوان باید حداقل 5 کاراکتر باشد.')
+					.max(20, 'عنوان باید حداکثر 20 کاراکتر باشد.'),
 				description: yup.string().required('توضیحات را وارد کنید.'),
 				discount: yup
 					.number()
