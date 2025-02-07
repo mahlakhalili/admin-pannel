@@ -1,15 +1,16 @@
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { useController, useFormContext } from 'react-hook-form';
-const Select = (
-	{label,
+const Select = ({
+	label,
 	placeholder = 'لطفا یک مورد را انتخاب کنید.',
 	name = '',
 	defaultValue = '',
 	className = '',
 	options = [],
 	rules = {},
-	onChange = () => {}}
-) => {
+	onChange = () => {},
+}) => {
 	const { control } = useFormContext();
 	const { field, fieldState } = useController({
 		control,
@@ -18,7 +19,13 @@ const Select = (
 		rules,
 	});
 	return (
-		<div className={`form-input ${className}`}>
+		<div
+			className={classNames({
+				'form-input': true,
+				[className]: className,
+				error: fieldState?.error,
+			})}
+		>
 			<label>{label}</label>
 			<select
 				{...field}
