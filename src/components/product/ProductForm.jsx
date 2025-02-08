@@ -17,9 +17,9 @@ import { InputSkeleton } from '../../skeleton/FormSkeleton';
 const ProductForm = ({
 	mode = 'ADD',
 	data = {},
-	// onAdd = () => {},
+	onAdd = () => {},
 	isAdding = false,
-	// onEdit = () => {},
+	onEdit = () => {},
 	isEditing = false,
 	onDelete = () => {},
 	isDeleting = false,
@@ -80,18 +80,18 @@ const ProductForm = ({
 		const output = {
 			title: formData.title,
 			description: formData.description,
-			price: formData.price,
-			count: formData.count,
+			price: +formData.price,
+			count: +formData.count,
 			images: formData.images,
 			discountCheckbox: formData.discountCheckbox,
 			status: formData.status,
 			category: formData.category,
 		};
 
-		if (formData.discountCheckbox) output.discount = formData.discount;
+		if (formData.discountCheckbox) output.discount = +formData.discount;
 
-		// if (mode === 'ADD') onAdd(formData);
-		// else if (mode === 'EDIT') onEdit({ ...formData, id: data.id });
+		if (mode === 'ADD') onAdd(output);
+		else if (mode === 'EDIT') onEdit({ ...output, id: data.id });
 	};
 	const { data: categoryList, isLoading: isCategoriesLosding } = useGetCategoryList();
 
