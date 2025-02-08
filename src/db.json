@@ -1,35 +1,12 @@
 {
   "product": [
     {
-      "id": "9708",
-      "title": "apple",
-      "description": "sumsung",
-      "price": 120000000,
-      "discount": 5,
-      "count": 6,
-      "images": [],
-      "status": "inactive",
-      "category": "2d71",
-      "discountCheckbox": false
-    },
-    {
-      "id": "b110",
-      "title": " شارژر",
-      "description": "شارژر",
-      "price":454545,
-      "discountCheckbox": false,
-      "count":2,
-      "images": [],
-      "status": "active",
-      "category": "f7d7"
-    },
-    {
       "id": "22f7",
       "title": "لوازم خانگی",
       "description": "لوازم خانگی",
       "price": 455455554,
       "discountCheckbox": true,
-      "discount":9,
+      "discount": 9,
       "count": 6,
       "images": [],
       "status": "active",
