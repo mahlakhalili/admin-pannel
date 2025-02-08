@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 const useEditProduct = ({ onEdit = () => {} }) => {
 	const queryClient = useQueryClient();
 	return useMutation({
-		mutationFn: (data) => apiClient.patch(`/product/${data.id}`).then((res) => res.data),
+		mutationFn: (data) => apiClient.patch(`/product/${data.id}`, data).then((res) => res.data),
 		onSuccess: () => {
 			queryClient.invalidateQueries({
 				queryKey: ['products'],
