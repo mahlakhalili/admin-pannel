@@ -6,7 +6,7 @@ import useDeleteProduct from '../../hooks/apis/product/useDeleteProduct';
 import { useParams, useNavigate } from 'react-router-dom';
 
 const EditProduct = () => {
-	const productId = useParams();
+	const { productId } = useParams();
 	const navigate = useNavigate();
 	const { data: product, isLoading } = useGetProduct(productId);
 	const editProduct = useEditProduct({
