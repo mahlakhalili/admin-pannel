@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 const useEditCategory = ({ onEdit = () => {} }) => {
 	const queryClient = useQueryClient();
 	return useMutation({
-		mutationFn: (data) => apiClient.patch(`/category/${data.id}`).then((res) => res.data),
+		mutationFn: (data) => apiClient.patch(`/category/${data.id}`, data).then((res) => res.data),
 		onSuccess: () => {
 			queryClient.invalidateQueries({
 				queryKey: ['category'],
