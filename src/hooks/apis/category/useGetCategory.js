@@ -4,7 +4,7 @@ import apiClient from '../../../apiClient';
 const useGetCategory = ({ categoryId }) => {
 	return useQuery({
 		queryKey: ['category', categoryId],
-		queryFn: () => apiClient.get(`/product/${categoryId}`).then((res) => res.data),
+		queryFn: () => apiClient.get(`/category/${categoryId}`).then((res) => res.data),
 	});
 };
 
