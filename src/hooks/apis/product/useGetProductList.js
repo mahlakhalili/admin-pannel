@@ -6,7 +6,7 @@ const useGetProductList = () => {
 		queryKey: ['products'],
 		queryFn: (data) =>
 			apiClient
-				.get('/product', { params: { '_page': 1, 'per_page': 4 } }, data)
+				.get('/product', { params: { '_page': 1, '_per_page': 5 } }, data)
 				.then((res) => res.data),
 	});
 };
