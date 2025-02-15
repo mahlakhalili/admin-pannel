@@ -4,7 +4,10 @@ import apiClient from '../../../apiClient';
 const useGetProductList = () => {
 	return useQuery({
 		queryKey: ['products'],
-		queryFn: (data) => apiClient.get('/product', data).then((res) => res.data),
+		queryFn: (data) =>
+			apiClient
+				.get('/product', { params: { _page: 1, per_page: 4 } }, data)
+				.then((res) => res.data),
 	});
 };
 
