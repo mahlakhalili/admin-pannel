@@ -26,13 +26,13 @@ const ProductList = () => {
 					افزودن محصول
 				</Link>
 			</div>
-			{products?.length === 0 && (
+			{products?.data?.length === 0 && (
 				<EmptyBox
 					title="هیچ محصولی وجود ندارد."
 					text="لطفا یک محصول به لیست محصولات اضافه کنید."
 				/>
 			)}
-			{products?.length > 0 && (
+			{products?.data?.length > 0 && (
 				<div className="table-wrapper">
 					<table>
 						<thead>
@@ -48,7 +48,7 @@ const ProductList = () => {
 							</tr>
 						</thead>
 						<tbody>
-							{products?.map((product, index) => (
+							{products?.data?.map((product, index) => (
 								<TableRow
 									key={product.id}
 									row={index + 1}
