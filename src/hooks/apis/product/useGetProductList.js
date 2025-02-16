@@ -3,7 +3,7 @@ import apiClient from '../../../apiClient';
 
 const useGetProductList = ({ params }) => {
 	return useQuery({
-		queryKey: ['products'],
+		queryKey: params ? ['products', params] : ['products'],
 		queryFn: (data) =>
 			apiClient
 				.get(
