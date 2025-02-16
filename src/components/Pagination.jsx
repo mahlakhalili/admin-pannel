@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 import { useSearchParams } from 'react-router-dom';
 import { numListArray } from '../helpers/Array';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
@@ -66,6 +67,14 @@ const PaginationBtn = ({
 			{text ?? icon}
 		</button>
 	);
+};
+PaginationBtn.propTypes = {
+	text: PropTypes.string,
+	icon: PropTypes.string,
+	isActive: PropTypes.bool,
+	disabled: PropTypes.bool,
+	className: PropTypes.string,
+	onClick: PropTypes.func,
 };
 
 export default Pagination;
