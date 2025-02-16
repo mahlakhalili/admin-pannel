@@ -1,3 +1,5 @@
+import classNames from 'classnames';
+import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 const Pagination = () => {
 	return (
 		<nav aria-label="Page navigation example">
@@ -91,6 +93,24 @@ const Pagination = () => {
 				</li>
 			</ul>
 		</nav>
+	);
+};
+const PaginationBtn = ({
+	text,
+	icon,
+	isActive = false,
+	disabled = false,
+	className = '',
+	onClick = () => {},
+}) => {
+	return (
+		<button
+			className={classNames({ '': true })}
+			onClick={onClick}
+			disabled={disabled}
+		>
+			{text ?? icon}
+		</button>
 	);
 };
 
