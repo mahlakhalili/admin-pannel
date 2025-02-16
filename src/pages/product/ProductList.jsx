@@ -5,6 +5,7 @@ import ListSkeleton from '../../skeleton/ListSkeleton';
 import PropTypes from 'prop-types';
 import EmptyBox from '../../components/EmptyBox';
 import Button from '../../components/Button';
+import Pagination from '../../components/Pagination';
 import { MdEdit } from 'react-icons/md';
 import { MdDelete } from 'react-icons/md';
 import { numberToCurrency } from '../../helpers/Number';
@@ -33,6 +34,7 @@ const ProductList = () => {
 				/>
 			)}
 			{products?.data?.length > 0 && (
+				<>
 				<div className="table-wrapper">
 					<table>
 						<thead>
@@ -66,6 +68,9 @@ const ProductList = () => {
 						</tbody>
 					</table>
 				</div>
+				<Pagination />
+				</>
+				
 			)}
 		</div>
 	);
