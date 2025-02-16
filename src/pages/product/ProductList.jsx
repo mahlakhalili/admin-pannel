@@ -1,6 +1,8 @@
 import useGetProductList from '../../hooks/apis/product/useGetProductList';
 import useDeleteProduct from '../../hooks/apis/product/useDeleteProduct';
 import useGetCategoryList from '../../hooks/apis/category/useGetCategoryList';
+import { useSearchParams } from 'react-router-dom';
+import { useEffect } from 'react';
 import ListSkeleton from '../../skeleton/ListSkeleton';
 import PropTypes from 'prop-types';
 import EmptyBox from '../../components/EmptyBox';
@@ -12,8 +14,18 @@ import { numberToCurrency } from '../../helpers/Number';
 import { Link } from 'react-router-dom';
 import { statusList } from '../../values';
 const ProductList = () => {
-	const { data: products, isLoading: isProductLoading } = useGetProductList();
+	const { data: products, isLoading: isProductLoading } = useGetProductList({
+		params: {
+			_page: searchParams.get('_pages'),
+			_per_page: searchParams.get('_per_page'),
+		},
+	});
 	const { data: categories, isLoading: isCategoriesLosding } = useGetCategoryList();
+	const [searchParams, setSearchParams] = useSearchParams();
+	useEffect(() => {
+		setSearchParams({ page: 1 });
+	});
+
 	if (isProductLoading || isCategoriesLosding) return <ListSkeleton />;
 
 	return (
@@ -35,42 +47,44 @@ const ProductList = () => {
 			)}
 			{products?.data?.length > 0 && (
 				<>
-				<div className="table-wrapper">
-					<table>
-						<thead>
-							<tr>
-								<th>ردیف</th>
-								<th>عنوان محصول</th>
-								<th>دسته بندی</th>
-								<th>قیمت</th>
-								<th>تخفیف</th>
-								<th>تعداد</th>
-								<th>وضعیت</th>
-								<th className="row">عملیات</th>
-							</tr>
-						</thead>
-						<tbody>
-							{products?.data?.map((product, index) => (
-								<TableRow
-									key={product.id}
-									row={index + 1}
-									{...product}
-									categories={categories}
-									// id={product.id}
-									// title={product.title}
-									// price={product.price}
-									// discount={product.discount}
-									// count={product.count}
-									// category={product.category}
-									// status={product.status}
-								/>
-							))}
-						</tbody>
-					</table>
-				</div>
-				<Pagination />
+					<div className="table-wrapper">
+						<table>
+							<thead>
+								<tr>
+									<th>ردیف</th>
+									<th>عنوان محصول</th>
+									<th>دسته بندی</th>
+									<th>قیمت</th>
+									<th>تخفیف</th>
+									<th>تعداد</th>
+									<th>وضعیت</th>
+									<th className="row">عملیات</th>
+								</tr>
+							</thead>
+							<tbody>
+								{products?.data?.map((product, index) => (
+									<TableRow
+										key={product.id}
+										row={index + 1}
+										{...product}
+										categories={categories}
+										// id={product.id}
+										// title={product.title}
+										// price={product.price}
+										// discount={product.discount}
+										// count={product.count}
+										// category={product.category}
+										// status={product.status}
+									/>
+								))}
+							</tbody>
+						</table>
+					</div>
+					<Pagination
+						totalPages={products?.pages}
+						currentPage={!products?.prev ? 1 : products?.prev + 1}
+					/>
 				</>
-				
 			)}
 		</div>
 	);
