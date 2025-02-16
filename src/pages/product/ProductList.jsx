@@ -17,14 +17,14 @@ const ProductList = () => {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const { data: products, isLoading: isProductLoading } = useGetProductList({
 		params: {
-			_page: searchParams.get('_pages'),
+			_page: searchParams.get('_page'),
 			_per_page: searchParams.get('_per_page'),
 		},
 	});
 	const { data: categories, isLoading: isCategoriesLosding } = useGetCategoryList();
 
 	useEffect(() => {
-		setSearchParams({ page: 1 });
+		setSearchParams({ _page: 1 });
 	});
 
 	if (isProductLoading || isCategoriesLosding) return <ListSkeleton />;
