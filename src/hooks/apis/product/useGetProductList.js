@@ -8,7 +8,7 @@ const useGetProductList = ({ params }) => {
 			apiClient
 				.get(
 					'/product',
-					{ params: { _page: params._pages ?? 1, _per_page: params._per_page ?? 5 } },
+					{ params: { _page: params._page ?? 1, _per_page: params._per_page ?? 5 } },
 					data
 				)
 				.then((res) => res.data),
