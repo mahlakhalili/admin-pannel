@@ -1,23 +1,42 @@
 import classNames from 'classnames';
+import { useSearchParams } from 'react-router-dom';
 import { numListArray } from '../helpers/Array';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 const Pagination = ({ totalPages, currentPage }) => {
+	const [searchParams, setSearchParams] = useSearchParams();
 	return (
 		<div className="flex items-center -space-x-px h-10 text-base mx-auto">
 			<PaginationBtn
 				icon={<IoIosArrowForward />}
 				className="rounded-s-lg"
+				onClick={() =>
+					setSearchParams({
+						_page: currentPage - 1,
+					})
+				}
+				disabled={currentPage === 1}
 			/>
 			{numListArray(totalPages).map((page) => (
 				<PaginationBtn
 					key={page}
 					text={page}
 					isActive={page === currentPage}
+					onClick={() =>
+						setSearchParams({
+							_page: page,
+						})
+					}
+					disabled={currentPage === totalPages}
 				/>
 			))}
 			<PaginationBtn
 				icon={<IoIosArrowBack />}
 				className="rounded-e-lg"
+				onClick={() =>
+					setSearchParams({
+						_page: currentPage + 1,
+					})
+				}
 			/>
 		</div>
 	);
