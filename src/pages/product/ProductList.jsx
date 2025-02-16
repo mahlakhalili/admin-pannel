@@ -14,6 +14,7 @@ import { numberToCurrency } from '../../helpers/Number';
 import { Link } from 'react-router-dom';
 import { statusList } from '../../values';
 const ProductList = () => {
+	const [searchParams, setSearchParams] = useSearchParams();
 	const { data: products, isLoading: isProductLoading } = useGetProductList({
 		params: {
 			_page: searchParams.get('_pages'),
@@ -21,7 +22,7 @@ const ProductList = () => {
 		},
 	});
 	const { data: categories, isLoading: isCategoriesLosding } = useGetCategoryList();
-	const [searchParams, setSearchParams] = useSearchParams();
+
 	useEffect(() => {
 		setSearchParams({ page: 1 });
 	});
