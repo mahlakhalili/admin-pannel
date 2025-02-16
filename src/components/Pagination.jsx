@@ -1,6 +1,7 @@
 import classNames from 'classnames';
+import { numListArray } from '../helpers/Array';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
-const Pagination = ({totalPages}) => {
+const Pagination = ({ totalPages, currentPage }) => {
 	return (
 		<div aria-label="Page navigation example">
 			<ul className="flex items-center -space-x-px h-10 text-base mx-auto">
@@ -8,6 +9,13 @@ const Pagination = ({totalPages}) => {
 					icon={<IoIosArrowForward />}
 					className="rounded-s-lg"
 				/>
+				{numListArray(totalPages).map((page) => (
+					<PaginationBtn
+						key={page}
+						text={page}
+						isActive={page === currentPage}
+					/>
+				))}
 				<PaginationBtn
 					icon={<IoIosArrowBack />}
 					className="rounded-e-lg"
