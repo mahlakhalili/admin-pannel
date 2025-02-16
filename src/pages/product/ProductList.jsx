@@ -2,7 +2,6 @@ import useGetProductList from '../../hooks/apis/product/useGetProductList';
 import useDeleteProduct from '../../hooks/apis/product/useDeleteProduct';
 import useGetCategoryList from '../../hooks/apis/category/useGetCategoryList';
 import { useSearchParams } from 'react-router-dom';
-import { useEffect } from 'react';
 import ListSkeleton from '../../skeleton/ListSkeleton';
 import PropTypes from 'prop-types';
 import EmptyBox from '../../components/EmptyBox';
@@ -22,10 +21,6 @@ const ProductList = () => {
 		},
 	});
 	const { data: categories, isLoading: isCategoriesLosding } = useGetCategoryList();
-
-	useEffect(() => {
-		setSearchParams({ _page: 1 });
-	});
 
 	if (isProductLoading || isCategoriesLosding) return <ListSkeleton />;
 
