@@ -7,6 +7,7 @@ import { CiBoxList } from 'react-icons/ci';
 import { IoIosAddCircleOutline } from 'react-icons/io';
 import { BiCategory } from 'react-icons/bi';
 import { IoIosArrowDown } from 'react-icons/io';
+import { FiUsers } from "react-icons/fi";
 
 const Sidebar = () => {
 	const navBar = [
@@ -40,6 +41,22 @@ const Sidebar = () => {
 					icon: <IoIosAddCircleOutline />,
 					href: '/category/add',
 				},
+			],
+		},
+		{
+			label: 'کاربران',
+			icon: <FiUsers />,
+			subMenu: [
+				{
+					label: 'لیست کاربران',
+					icon: <CiBoxList />,
+					href: '/users/list',
+				},
+				// {
+				// 	label: 'افزودن محصولات',
+				// 	icon: <IoIosAddCircleOutline />,
+				// 	href: '/product/add',
+				// },
 			],
 		},
 	];
