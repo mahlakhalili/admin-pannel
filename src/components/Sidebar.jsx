@@ -52,11 +52,11 @@ const Sidebar = () => {
 					icon: <CiBoxList />,
 					href: '/users/list',
 				},
-				// {
-				// 	label: 'افزودن محصولات',
-				// 	icon: <IoIosAddCircleOutline />,
-				// 	href: '/product/add',
-				// },
+				{
+					label: 'افزودن کاربر',
+					icon: <IoIosAddCircleOutline />,
+					href: '/users/add',
+				},
 			],
 		},
 	];
