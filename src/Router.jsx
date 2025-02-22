@@ -8,6 +8,8 @@ import EditProduct from './pages/product/EditProduct';
 import CategoryList from './pages/category/CategoryList';
 import AddCategory from './pages/category/AddCategory';
 import EditCategory from './pages/category/EditCategory';
+//users
+import UsersList from './pages/users/UsersList';
 
 const Router = createBrowserRouter([
 	{
@@ -37,6 +39,10 @@ const Router = createBrowserRouter([
 			{
 				path: '/category/edit/:categoryId',
 				element: <EditCategory />,
+			},
+			{
+				path: '/users/list',
+				element: <UsersList />,
 			},
 		],
 	},
