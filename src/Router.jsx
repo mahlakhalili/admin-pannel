@@ -10,6 +10,7 @@ import AddCategory from './pages/category/AddCategory';
 import EditCategory from './pages/category/EditCategory';
 //users
 import UsersList from './pages/users/UsersList';
+import AddUser from './pages/users/AddUser';
 
 const Router = createBrowserRouter([
 	{
@@ -43,6 +44,10 @@ const Router = createBrowserRouter([
 			{
 				path: '/users/list',
 				element: <UsersList />,
+			},
+			{
+				path: '/users/add',
+				element: <AddUser />,
 			},
 		],
 	},
