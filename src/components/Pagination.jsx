@@ -68,6 +68,10 @@ const PaginationBtn = ({
 		</button>
 	);
 };
+Pagination.propTypes = {
+	totalPages: PropTypes.number,
+	currentPage: PropTypes.number,
+};
 PaginationBtn.propTypes = {
 	text: PropTypes.string,
 	icon: PropTypes.string,
