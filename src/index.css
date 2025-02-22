@@ -25,7 +25,7 @@
 	.form-input.error input,
 	.form-input.error textarea,
 	.form-input.error select {
-		@apply border-red-600
+		@apply border-red-600;
 	}
 
 	.form-input label {
