@@ -17,6 +17,7 @@ const UserForm = () => {
 							name="lastName"
 							label=" نام خانوادگی"
 						/>
+
 						<Input
 							name="province"
 							label="استان"
@@ -25,16 +26,17 @@ const UserForm = () => {
 							name="city"
 							label="شهر"
 						/>
+
 						<Input
 							name="phone"
 							label="شماره تلفن"
-                            type="number"
+							type="number"
 						/>
 
 						<Input
 							name="postCode"
 							label="کد پستی"
-                            type="number"
+							type="number"
 						/>
 					</div>
 				</div>
