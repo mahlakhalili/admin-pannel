@@ -4,6 +4,7 @@ import Input from '../Input';
 import Button from '../Button';
 const UserForm = ({ mode = 'ADD' }) => {
 	const formMethods = useForm();
+	const { handleSubmit, register } = formMethods;
 	return (
 		<FormProvider {...formMethods}>
 			<form className="form grid gap-4">
