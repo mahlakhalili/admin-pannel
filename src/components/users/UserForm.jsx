@@ -1,8 +1,8 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { FormProvider, useForm } from 'react-hook-form';
 import Input from '../Input';
 import Button from '../Button';
-const UserForm = ({mode = 'ADD',}) => {
+const UserForm = ({ mode = 'ADD' }) => {
 	const formMethods = useForm();
 	return (
 		<FormProvider {...formMethods}>
@@ -76,6 +76,9 @@ const UserForm = ({mode = 'ADD',}) => {
 			</form>
 		</FormProvider>
 	);
+};
+UserForm.propTypes = {
+	mode: PropTypes.oneOf(['ADD', 'EDIT']),
 };
 
 export default UserForm;
