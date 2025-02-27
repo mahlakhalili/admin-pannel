@@ -1,8 +1,8 @@
 // import PropTypes from 'prop-types';
 import { FormProvider, useForm } from 'react-hook-form';
 import Input from '../Input';
-// import Button from '../Button';
-const UserForm = () => {
+import Button from '../Button';
+const UserForm = ({mode = 'ADD',}) => {
 	const formMethods = useForm();
 	return (
 		<FormProvider {...formMethods}>
@@ -38,6 +38,39 @@ const UserForm = () => {
 							label="کد پستی"
 							type="number"
 						/>
+					</div>
+					<div className="btn  flex justify-center items-center gap-4 col-span-2 mt-4 text-lg">
+						<Button
+							text="انصراف"
+							color="outline-red"
+							to="/product/list"
+						/>
+						{mode === 'ADD' && (
+							<Button
+								color="blue"
+								type="submit"
+								text="ذخیره"
+								// loading={isAdding}
+								// onClick={handleSubmit(onSubmit)}
+							/>
+						)}
+						{mode === 'EDIT' && (
+							<>
+								<Button
+									text="حذف"
+									color="red"
+									// loading={isDeleting}
+									// onClick={() => onDelete(data.id)}
+								/>
+								<Button
+									text="ویرایش"
+									color="green"
+									type="submit"
+									// loading={isEditing}
+									// onClick={handleSubmit(onSubmit)}
+								/>
+							</>
+						)}
 					</div>
 				</div>
 			</form>
