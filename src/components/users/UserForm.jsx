@@ -4,12 +4,12 @@ import Input from '../Input';
 import Button from '../Button';
 const UserForm = ({ mode = 'ADD' }) => {
 	const formMethods = useForm();
-	const { handleSubmit, register } = formMethods;
+	const { handleSubmit, register, setValue, getValues } = formMethods;
 	return (
 		<FormProvider {...formMethods}>
 			<form className="form grid gap-4">
 				<div className="userForm space-y-4">
-					<div className="card grid-cols-2">
+					<div className="card grid-cols-2 col-span-2">
 						<Input
 							name="firstName"
 							label="نام"
