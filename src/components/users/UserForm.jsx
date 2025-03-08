@@ -1,9 +1,20 @@
 import PropTypes from 'prop-types';
 import { FormProvider, useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
 import Input from '../Input';
 import Button from '../Button';
 const UserForm = ({ mode = 'ADD' }) => {
-	const formMethods = useForm();
+	const formMethods = useForm({
+		resolver: yupResolver(
+			yup.object().shape({
+				firstName: yup
+					.string()
+					.required('نام را وارد کنید.')
+					.min(2, 'نام باید حداقل دو کاراکتر باشد.'),
+			})
+		),
+	});
 	const { handleSubmit, register, setValue, getValues } = formMethods;
 	return (
 		<FormProvider {...formMethods}>
@@ -13,6 +24,13 @@ const UserForm = ({ mode = 'ADD' }) => {
 						<Input
 							name="firstName"
 							label="نام"
+							rules={{
+								required: 'نام را وارد کنید',
+								minLength: {
+									value: 2,
+									message: 'نام باید حداقل باید دو کاراکتر باشد.',
+								},
+							}}
 						/>
 						<Input
 							name="lastName"
