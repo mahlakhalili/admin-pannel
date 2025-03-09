@@ -4,7 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import Input from '../Input';
 import Button from '../Button';
-const UserForm = ({ mode = 'ADD' }) => {
+const UserForm = ({ mode = 'ADD', onAdd = () => {} }) => {
 	const formMethods = useForm({
 		resolver: yupResolver(
 			yup.object().shape({
@@ -71,6 +71,9 @@ const UserForm = ({ mode = 'ADD' }) => {
 								text="ذخیره"
 								// loading={isAdding}
 								// onClick={handleSubmit(onSubmit)}
+								onClick={formMethods.handleSubmit((formData) => {
+									onAdd(formData);
+								})}
 							/>
 						)}
 						{mode === 'EDIT' && (
@@ -98,6 +101,7 @@ const UserForm = ({ mode = 'ADD' }) => {
 };
 UserForm.propTypes = {
 	mode: PropTypes.oneOf(['ADD', 'EDIT']),
+	onAdd: PropTypes.func,
 };
 
 export default UserForm;
