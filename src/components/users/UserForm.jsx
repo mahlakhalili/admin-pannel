@@ -46,17 +46,11 @@ const UserForm = ({ mode = 'ADD', onAdd = () => {} }) => {
 						<Input
 							name="firstName"
 							label="نام"
-							rules={{
-								required: 'نام را وارد کنید',
-								minLength: {
-									value: 2,
-									message: 'نام باید حداقل باید دو کاراکتر باشد.',
-								},
-							}}
+						
 						/>
 						<Input
 							name="lastName"
-							label=" نام خانوادگی"
+							label=" نام خانوادگی" 
 						/>
 
 						<Input
