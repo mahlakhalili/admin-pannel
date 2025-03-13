@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import useGetUserList from '../../hooks/apis/user/useGetUserList';
 import Button from '../../components/Button';
 import { MdEdit } from 'react-icons/md';
@@ -56,12 +57,17 @@ const UsersList = () => {
 		</div>
 	);
 };
-const TableRow = () => {
+const TableRow = ({ firstName, lastName, province, city, phone, postCode }) => {
 	// const deleteProduct = useDeleteProduct({});
 	return (
-		<tr key={id}>
+		<tr key={user.id}>
+			<td>{index + 1}</td>
 			<td>{firstName}</td>
-			
+			<td>{lastName}</td>
+			<td>{province}</td>
+			<td>{city}</td>
+			<td>{phone}</td>
+			<td>{postCode}</td>
 
 			<td>
 				<div className="btns flex items-center gap-4">
@@ -82,6 +88,15 @@ const TableRow = () => {
 			</td>
 		</tr>
 	);
+};
+TableRow.propTypes = {
+	id: PropTypes.string,
+	firstName: PropTypes.string,
+	lastName: PropTypes.string,
+	province: PropTypes.string,
+	city: PropTypes.string,
+	phone: PropTypes.number,
+	postCode: PropTypes.number,
 };
 
 export default UsersList;
