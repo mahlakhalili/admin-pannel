@@ -74,7 +74,7 @@ const TableRow = ({ firstName, lastName, province, city, phone, postCode }) => {
 					<Button
 						icon={<MdEdit size={18} />}
 						color="green"
-						to={`/product/edit/${id}`}
+						// to={`/product/edit/${id}`}
 					/>
 					<Button
 						icon={<MdDelete size={18} />}
