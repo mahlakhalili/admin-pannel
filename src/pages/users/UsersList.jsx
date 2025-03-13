@@ -1,5 +1,10 @@
 import { Link } from 'react-router-dom';
+import useGetUserList from '../../hooks/apis/user/useGetUserList';
+import Button from '../../components/Button';
+import { MdEdit } from 'react-icons/md';
+import { MdDelete } from 'react-icons/md';
 const UsersList = () => {
+	const { data: users } = useGetUserList({});
 	return (
 		<div className="page">
 			<div className="flex items-center justify-between">
@@ -24,13 +29,13 @@ const UsersList = () => {
 								<th>کد پستی</th>
 							</tr>
 						</thead>
-						{/* <tbody>
-							{products?.data?.map((product, index) => (
+						<tbody>
+							{users?.data?.map((user, index) => (
 								<TableRow
-									key={product.id}
+									key={user.id}
 									row={index + 1}
-									{...product}
-									categories={categories}
+									{...user}
+
 									// id={product.id}
 									// title={product.title}
 									// price={product.price}
@@ -40,7 +45,7 @@ const UsersList = () => {
 									// status={product.status}
 								/>
 							))}
-						</tbody> */}
+						</tbody>
 					</table>
 				</div>
 				{/* <Pagination
@@ -49,6 +54,33 @@ const UsersList = () => {
 				/> */}
 			</>
 		</div>
+	);
+};
+const TableRow = () => {
+	// const deleteProduct = useDeleteProduct({});
+	return (
+		<tr key={id}>
+			<td>{firstName}</td>
+			
+
+			<td>
+				<div className="btns flex items-center gap-4">
+					<Button
+						icon={<MdEdit size={18} />}
+						color="green"
+						to={`/product/edit/${id}`}
+					/>
+					<Button
+						icon={<MdDelete size={18} />}
+						color="red"
+						// loading={deleteProduct.isPending}
+						// onClick={() => {
+						// 	deleteProduct.mutate(id);
+						// }}
+					/>
+				</div>
+			</td>
+		</tr>
 	);
 };
 
