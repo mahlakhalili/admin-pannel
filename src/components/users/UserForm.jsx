@@ -37,7 +37,7 @@ const UserForm = ({ mode = 'ADD', onAdd = () => {} }) => {
 			})
 		),
 	});
-	const { handleSubmit, register, setValue, getValues } = formMethods;
+	const { handleSubmit } = formMethods;
 	return (
 		<FormProvider {...formMethods}>
 			<form className="form grid gap-4">
@@ -46,11 +46,10 @@ const UserForm = ({ mode = 'ADD', onAdd = () => {} }) => {
 						<Input
 							name="firstName"
 							label="نام"
-						
 						/>
 						<Input
 							name="lastName"
-							label=" نام خانوادگی" 
+							label=" نام خانوادگی"
 						/>
 
 						<Input
