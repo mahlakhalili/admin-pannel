@@ -28,6 +28,7 @@ const UsersList = () => {
 								<th>شهر</th>
 								<th>شماره تلفن</th>
 								<th>کد پستی</th>
+								<th className="row">عملیات</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -68,6 +69,23 @@ const TableRow = ({ firstName, lastName, province, city, phone, postCode }) => {
 			<td>{city}</td>
 			<td>{phone}</td>
 			<td>{postCode}</td>
+			<td>
+				<div className="btns flex items-center gap-4">
+					<Button
+						icon={<MdEdit size={18} />}
+						color="green"
+						to={`/product/edit/${id}`}
+					/>
+					<Button
+						icon={<MdDelete size={18} />}
+						color="red"
+						// loading={deleteProduct.isPending}
+						// onClick={() => {
+						// 	deleteProduct.mutate(id);
+						// }}
+					/>
+				</div>
+			</td>
 
 			<td>
 				<div className="btns flex items-center gap-4">
