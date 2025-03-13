@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import useGetUserList from '../../hooks/apis/user/useGetUserList';
+import useDeleteUser from '../../hooks/apis/user/useDeleteUser';
 import Button from '../../components/Button';
 import { MdEdit } from 'react-icons/md';
 import { MdDelete } from 'react-icons/md';
@@ -59,7 +60,7 @@ const UsersList = () => {
 	);
 };
 const TableRow = ({ firstName, lastName, province, city, phone, postCode }) => {
-	// const deleteProduct = useDeleteProduct({});
+	const deleteUser = useDeleteUser({});
 	return (
 		<tr key={user.id}>
 			<td>{index + 1}</td>
@@ -79,10 +80,10 @@ const TableRow = ({ firstName, lastName, province, city, phone, postCode }) => {
 					<Button
 						icon={<MdDelete size={18} />}
 						color="red"
-						// loading={deleteProduct.isPending}
-						// onClick={() => {
-						// 	deleteProduct.mutate(id);
-						// }}
+						loading={deleteUser.isPending}
+						onClick={() => {
+							deleteUser.mutate(id);
+						}}
 					/>
 				</div>
 			</td>
