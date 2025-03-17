@@ -32,6 +32,7 @@ const UsersList = () => {
 					<table>
 						<thead>
 							<tr>
+								<th>ردیف</th>
 								<th>نام</th>
 								<th>نام خانوادگی</th>
 								<th> استان</th>
