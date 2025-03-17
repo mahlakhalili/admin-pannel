@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 const useAddUser = ({ onAdd = () => {} }) => {
 	const queryClient = useQueryClient();
 	return useMutation({
-		mutationFn: (data) => apiClient.post('/user', data).then((res) => res.data),
+		mutationFn: (data) => apiClient.post('/users', data).then((res) => res.data),
 		onSuccess: () => {
 			queryClient.invalidateQueries({
 				queryKey: ['users'],
