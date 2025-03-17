@@ -7,6 +7,8 @@ import { MdEdit } from 'react-icons/md';
 import { MdDelete } from 'react-icons/md';
 const UsersList = () => {
 	const { data: users } = useGetUserList({});
+	console.log(users)
+	
 	return (
 		<div className="page">
 			<div className="flex items-center justify-between">
@@ -59,7 +61,7 @@ const UsersList = () => {
 		</div>
 	);
 };
-const TableRow = ({ firstName, lastName, province, city, phone, postCode }) => {
+const TableRow = ({user, id, firstName, lastName, province, city, phone, postCode }) => {
 	const deleteUser = useDeleteUser({});
 	return (
 		<tr key={user.id}>
