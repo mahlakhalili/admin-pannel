@@ -60,11 +60,12 @@ const UsersList = () => {
 		</div>
 	);
 };
-const TableRow = ({ user, id, firstName, lastName, province, city, phone, postCode }) => {
+const TableRow = ({ user,index, id, firstName, lastName, province, city, phone, postCode }) => {
 	const deleteUser = useDeleteUser({});
 	return (
 		<tr key={user.id}>
-			<td>{index + 1}</td>
+		{/* // 	<td>{index + 1}</td> */}
+		<td>{row}</td>
 			<td>{firstName}</td>
 			<td>{lastName}</td>
 			<td>{province}</td>
