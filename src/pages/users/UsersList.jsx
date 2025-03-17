@@ -4,8 +4,8 @@ import useGetUserList from '../../hooks/apis/user/useGetUserList';
 import useDeleteUser from '../../hooks/apis/user/useDeleteUser';
 import { useSearchParams } from 'react-router-dom';
 import Button from '../../components/Button';
-import { MdEdit } from 'react-icons/md';
-import { MdDelete } from 'react-icons/md';
+// import { MdEdit } from 'react-icons/md';
+// import { MdDelete } from 'react-icons/md';
 const UsersList = () => {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const { data: users } = useGetUserList({
@@ -60,40 +60,22 @@ const UsersList = () => {
 		</div>
 	);
 };
-const TableRow = ({ user,index, id, firstName, lastName, province, city, phone, postCode }) => {
-	const deleteUser = useDeleteUser({});
+const TableRow = ({ row, firstName, lastName, province, city, phone, postCode }) => {
+	// const deleteUser = useDeleteUser({});
 	return (
-		<tr key={user.id}>
-		{/* // 	<td>{index + 1}</td> */}
-		<td>{row}</td>
+		<tr>
+			<td>{row}</td>
 			<td>{firstName}</td>
 			<td>{lastName}</td>
 			<td>{province}</td>
 			<td>{city}</td>
 			<td>{phone}</td>
 			<td>{postCode}</td>
-			<td>
-				<div className="btns flex items-center gap-4">
-					<Button
-						icon={<MdEdit size={18} />}
-						color="green"
-						// to={`/product/edit/${id}`}
-					/>
-					<Button
-						icon={<MdDelete size={18} />}
-						color="red"
-						loading={deleteUser.isPending}
-						onClick={() => {
-							deleteUser.mutate(id);
-						}}
-					/>
-				</div>
-			</td>
 		</tr>
 	);
 };
 TableRow.propTypes = {
-	id: PropTypes.string,
+	row: PropTypes.number,
 	firstName: PropTypes.string,
 	lastName: PropTypes.string,
 	province: PropTypes.string,
