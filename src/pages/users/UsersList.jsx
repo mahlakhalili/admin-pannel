@@ -2,13 +2,20 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import useGetUserList from '../../hooks/apis/user/useGetUserList';
 import useDeleteUser from '../../hooks/apis/user/useDeleteUser';
+import { useSearchParams } from 'react-router-dom';
 import Button from '../../components/Button';
 import { MdEdit } from 'react-icons/md';
 import { MdDelete } from 'react-icons/md';
 const UsersList = () => {
-	const { data: users } = useGetUserList({});
-	console.log(users)
-	
+	const [searchParams, setSearchParams] = useSearchParams();
+	const { data: users } = useGetUserList({
+		params: {
+			_page: searchParams.get('_page'),
+			_per_page: searchParams.get('_per_page'),
+		},
+	});
+	console.log(users);
+
 	return (
 		<div className="page">
 			<div className="flex items-center justify-between">
@@ -40,14 +47,6 @@ const UsersList = () => {
 									key={user.id}
 									row={index + 1}
 									{...user}
-
-									// id={product.id}
-									// title={product.title}
-									// price={product.price}
-									// discount={product.discount}
-									// count={product.count}
-									// category={product.category}
-									// status={product.status}
 								/>
 							))}
 						</tbody>
@@ -61,7 +60,7 @@ const UsersList = () => {
 		</div>
 	);
 };
-const TableRow = ({user, id, firstName, lastName, province, city, phone, postCode }) => {
+const TableRow = ({ user, id, firstName, lastName, province, city, phone, postCode }) => {
 	const deleteUser = useDeleteUser({});
 	return (
 		<tr key={user.id}>
