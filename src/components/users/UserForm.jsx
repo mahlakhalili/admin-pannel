@@ -86,10 +86,14 @@ const UserForm = ({ mode = 'ADD', onAdd = () => {} }) => {
 								text="ذخیره"
 								// loading={isAdding}
 								// onClick={handleSubmit(onSubmit)}
+								
 								onClick={formMethods.handleSubmit((formData) => {
+									console.log(formData)
 									onAdd(formData);
 								})}
+								
 							/>
+							
 						)}
 						{mode === 'EDIT' && (
 							<>
